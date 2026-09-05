@@ -53,6 +53,14 @@ export const FORENSIC_CASE_STUDIES = [
   }
 ];
 
+export const RED_FLAG_CHECKLIST = [
+  { id: "RF1", name: "CFO to PAT Divergence", threshold: "CFO / PAT < 0.7 for 3 consecutive years", risk: "Severe (Aggressive Revenue Recognition)" },
+  { id: "RF2", name: "Promoter Share Pledging", threshold: "Pledge > 20% of promoter holding", risk: "Critical Margin Call Liquidation Risk" },
+  { id: "RF3", name: "Contingent Liabilities to Net Worth", threshold: "Contingent Liabilities > 30% of Net Worth", risk: "Off-Balance Sheet Litigation Shock" },
+  { id: "RF4", name: "Frequent Auditor Resignations", threshold: "Auditor resignation mid-term without detailed explanation", risk: "Statutory Red Flag / Fraud Potential" },
+  { id: "RF5", name: "Related Party Transactions (RPT)", threshold: "Unlisted promoter entity loans/sales > 15% revenue", risk: "Capital Siphoning" }
+];
+
 export class ForensicLab {
   evaluateGovernance({ pledge, cfoPat, auditorChange, contingentLiab, rptStatus }) {
     let score = 100;

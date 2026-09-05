@@ -14,9 +14,9 @@ const VERCEL_CLOUD_URL = 'https://bharat-alpha-terminal-rbu3.vercel.app';
 
 class ApiClient {
   constructor() {
-    // If hosted on GitHub Pages or file protocol, route API calls to the live Vercel cloud backend
-    const isStaticHost = window.location.hostname.includes('github.io') || window.location.protocol === 'file:';
-    this.baseUrl = isStaticHost ? VERCEL_CLOUD_URL : window.location.origin;
+    const isBrowser = typeof window !== 'undefined';
+    const isStaticHost = isBrowser && (window.location.hostname.includes('github.io') || window.location.protocol === 'file:');
+    this.baseUrl = isStaticHost ? VERCEL_CLOUD_URL : (isBrowser ? window.location.origin : 'http://localhost:3000');
     this.isBackendOnline = null;
     this.cachedStocks = null;
   }

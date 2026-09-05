@@ -445,9 +445,18 @@
     import { ClerkAuthController } from './js/clerkAuth.js';
 
     document.addEventListener('DOMContentLoaded', async () => {
-      window.terminalApp = new TerminalMasterApp();
-      window.clerkAuth = new ClerkAuthController();
-      await window.clerkAuth.init();
+      try {
+        window.terminalApp = new TerminalMasterApp();
+      } catch (e) {
+        console.error('Failed to initialize TerminalMasterApp:', e);
+      }
+
+      try {
+        window.clerkAuth = new ClerkAuthController();
+        await window.clerkAuth.init();
+      } catch (e) {
+        console.warn('Failed to initialize ClerkAuth:', e);
+      }
     });
   </script>
 
