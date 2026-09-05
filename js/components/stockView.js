@@ -2,9 +2,9 @@
  * BHARAT ALPHA TERMINAL - STOCKS CHARTS & COMPREHENSIVE RESULTS WORKSTATION
  */
 
-import { MASTER_STOCKS, getStockByTicker } from '../data/masterStocks.js';
-import { StockChartEngine } from './stockChart.js';
-import { apiClient } from '../apiClient.js';
+import { MASTER_STOCKS, getStockByTicker } from '../data/masterStocks.js?v=2.6.2';
+import { StockChartEngine } from './stockChart.js?v=2.6.2';
+import { apiClient } from '../apiClient.js?v=2.6.2';
 
 export class StockWorkstation {
   constructor(containerElement, onNavigatePhase) {

@@ -4,14 +4,14 @@
  * Master Portfolio Simulator, 8 Phase Research Dossiers, and CLI Command Engine.
  */
 
-import { MASTER_STOCKS, getStockByTicker } from './data/masterStocks.js';
-import { CRISIS_MATRIX, CRUDE_SCENARIOS, MACRO_MILESTONES } from './data/macro.js';
-import { WHALES_DATA } from './data/whales.js';
-import { StockWorkstation } from './components/stockView.js';
-import { PortfolioCalculator } from './components/portfolio.js';
-import { FoRadar } from './components/foRadar.js';
-import { ForensicLab, FORENSIC_CASE_STUDIES } from './components/forensicLab.js';
-import { apiClient } from './apiClient.js';
+import { MASTER_STOCKS, getStockByTicker } from './data/masterStocks.js?v=2.6.2';
+import { CRISIS_MATRIX, CRUDE_SCENARIOS, MACRO_MILESTONES } from './data/macro.js?v=2.6.2';
+import { WHALES_DATA } from './data/whales.js?v=2.6.2';
+import { StockWorkstation } from './components/stockView.js?v=2.6.2';
+import { PortfolioCalculator } from './components/portfolio.js?v=2.6.2';
+import { FoRadar } from './components/foRadar.js?v=2.6.2';
+import { ForensicLab, FORENSIC_CASE_STUDIES } from './components/forensicLab.js?v=2.6.2';
+import { apiClient } from './apiClient.js?v=2.6.2';
 
 export class TerminalMasterApp {
   constructor() {

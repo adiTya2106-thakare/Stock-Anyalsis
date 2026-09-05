@@ -441,23 +441,33 @@
 
   <!-- Master Application Script & Clerk Auth -->
   <script type="module">
-    import { TerminalMasterApp } from './js/terminalMaster.js';
-    import { ClerkAuthController } from './js/clerkAuth.js';
+    import { TerminalMasterApp } from './js/terminalMaster.js?v=2.6.2';
+    import { ClerkAuthController } from './js/clerkAuth.js?v=2.6.2';
 
-    document.addEventListener('DOMContentLoaded', async () => {
+    async function initApp() {
       try {
-        window.terminalApp = new TerminalMasterApp();
+        if (!window.terminalApp) {
+          window.terminalApp = new TerminalMasterApp();
+        }
       } catch (e) {
         console.error('Failed to initialize TerminalMasterApp:', e);
       }
 
       try {
-        window.clerkAuth = new ClerkAuthController();
-        await window.clerkAuth.init();
+        if (!window.clerkAuth) {
+          window.clerkAuth = new ClerkAuthController();
+          await window.clerkAuth.init();
+        }
       } catch (e) {
         console.warn('Failed to initialize ClerkAuth:', e);
       }
-    });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initApp);
+    } else {
+      initApp();
+    }
   </script>
 
 </body>
