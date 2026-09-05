@@ -10,9 +10,13 @@ import { WHALES_DATA } from './data/whales.js';
 import { MODEL_PORTFOLIO_ASSETS } from './components/portfolio.js';
 import { FORENSIC_CASE_STUDIES, RED_FLAG_CHECKLIST } from './components/forensicLab.js';
 
+const VERCEL_CLOUD_URL = 'https://bharat-alpha-terminal-rbu3.vercel.app';
+
 class ApiClient {
   constructor() {
-    this.baseUrl = window.location.origin;
+    // If hosted on GitHub Pages or file protocol, route API calls to the live Vercel cloud backend
+    const isStaticHost = window.location.hostname.includes('github.io') || window.location.protocol === 'file:';
+    this.baseUrl = isStaticHost ? VERCEL_CLOUD_URL : window.location.origin;
     this.isBackendOnline = null;
     this.cachedStocks = null;
   }
