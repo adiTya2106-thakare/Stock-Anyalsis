@@ -7,8 +7,7 @@
     "start": "node server.js",
     "dev": "node server.js",
     "serve": "node server.js",
-    "test": "node test-backend.js",
-    "build": "echo Zero build step required - Static ES Modules"
+    "test": "node test-backend.js"
   },
   "keywords": [
     "indian-equities",

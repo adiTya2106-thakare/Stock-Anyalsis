@@ -11,7 +11,6 @@
   ],
   "userWatchlists": {
     "default": [
-      "SUZLON",
       "HDFCBANK",
       "RELIANCE",
       "ICICIBANK",
@@ -31,6 +30,12 @@
       }
     ],
     "RELIANCE": [
+      {
+        "id": "note_1788630702194",
+        "author": "Lead Quant",
+        "text": "Automated test note from CI/CD pipeline verification.",
+        "timestamp": "2026-09-05T17:51:42.194Z"
+      },
       {
         "id": "note_1788629910172",
         "author": "Lead Quant",
