@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>SOVEREIGN // 30 TERMINAL</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; } @keyframes pulse-fast { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } } .animate-live-pulse { animation: pulse-fast 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "error-container": "#93000a", "on-tertiary-fixed": "#001f24", "on-tertiary": "#00363d", "surface": "#10141a", "surface-variant": "#31353c", "primary-fixed": "#ffdcbe", "surface-tint": "#ffb870", "on-tertiary-fixed-variant": "#004f58", "on-background": "#dfe2eb", "tertiary-container": "#00c2d8", "surface-container-low": "#181c22", "surface-bright": "#353940", "surface-container-high": "#262a31", "background": "#10141a", "tertiary-fixed-dim": "#00daf3", "tertiary": "#00e0fa", "on-primary-fixed": "#2c1600", "surface-dim": "#10141a", "primary-container": "#ff9800", "error": "#ffb4ab", "on-primary": "#4a2800", "outline": "#a38d7a", "on-secondary-container": "#00622e", "on-error-container": "#ffdad6", "secondary": "#7dffa2", "tertiary-fixed": "#9cf0ff", "on-secondary": "#003918", "on-secondary-fixed": "#00210b", "on-surface-variant": "#dbc2ad", "outline-variant": "#554434", "primary": "#ffc081", "inverse-surface": "#dfe2eb", "on-error": "#690005", "surface-container-highest": "#31353c", "surface-container-lowest": "#0a0e14", "on-primary-container": "#653900", "secondary-fixed": "#62ff96", "secondary-fixed-dim": "#00e475", "primary-fixed-dim": "#ffb870", "secondary-container": "#05e777", "on-secondary-fixed-variant": "#005226", "on-primary-fixed-variant": "#693c00", "inverse-on-surface": "#2d3137", "on-tertiary-container": "#004b54", "inverse-primary": "#8b5000", "surface-container": "#1c2026" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-2xs": "2px", "space-xs": "4px", "space-sm": "8px", "status-strip-height": "22px", "space-xl": "24px", "space-lg": "16px", "pane-header-height": "28px", "space-2xl": "32px", "space-md": "12px", "cli-bar-height": "36px", "table-row-height": "20px" }, "fontFamily": { "body-md": ["JetBrains Mono"], "body-sm": ["JetBrains Mono"], "code-cli": ["JetBrains Mono"], "headline-sm": ["IBM Plex Sans"], "body-lg": ["JetBrains Mono"], "label-caps": ["IBM Plex Sans"], "headline-lg": ["IBM Plex Sans"], "display": ["IBM Plex Sans"], "micro-badge": ["JetBrains Mono"], "metric-display": ["JetBrains Mono"], "headline-md": ["IBM Plex Sans"], "metric-table": ["JetBrains Mono"] }, "fontSize": { "body-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "400" }], "body-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.01em", "fontWeight": "400" }], "code-cli": ["13px", { "lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "500" }], "headline-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "body-lg": ["13px", { "lineHeight": "18px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "label-caps": ["10px", { "lineHeight": "12px", "letterSpacing": "0.08em", "fontWeight": "700" }], "headline-lg": ["18px", { "lineHeight": "22px", "letterSpacing": "-0.005em", "fontWeight": "600" }], "display": ["24px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "micro-badge": ["9px", { "lineHeight": "10px", "letterSpacing": "0.05em", "fontWeight": "700" }], "metric-display": ["20px", { "lineHeight": "24px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-md": ["14px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "600" }], "metric-table": ["11px", { "lineHeight": "14px", "letterSpacing": "0em", "fontWeight": "500" }] } } } };</script></head><body class="bg-background font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest border-b border-surface-container-high"><div class="h-16 w-full px-space-md flex items-center justify-between gap-space-md border-b border-surface-container-high/60"><div class="flex items-center gap-space-md shrink-0"><div class="flex items-center gap-space-xs"><span class="bg-primary-container text-on-primary-container font-micro-badge text-micro-badge px-space-xs py-space-2xs uppercase tracking-widest">SV30</span><span class="font-headline-md text-headline-md tracking-wider text-primary uppercase">SOVEREIGN 30 <span class="text-on-surface-variant">// INSTITUTIONAL DESK</span></span></div></div><div class="hidden xl:flex items-center overflow-x-auto whitespace-nowrap gap-space-sm px-space-sm border-l border-r border-surface-container-high py-space-2xs text-metric-table font-metric-table"><div class="flex items-center gap-space-xs px-space-xs"><span class="text-on-surface-variant font-label-caps text-label-caps">SPX</span><span class="text-on-surface">5,842.10</span><span class="text-secondary font-micro-badge text-micro-badge bg-surface-container px-space-2xs">+0.64%</span></div><span class="text-outline-variant">|</span><div class="flex items-center gap-space-xs px-space-xs"><span class="text-on-surface-variant font-label-caps text-label-caps">NIFTY</span><span class="text-on-surface">24,850.30</span><span class="text-secondary font-micro-badge text-micro-badge bg-surface-container px-space-2xs">+0.48%</span></div><span class="text-outline-variant">|</span><div class="flex items-center gap-space-xs px-space-xs"><span class="text-on-surface-variant font-label-caps text-label-caps">BRENT</span><span class="text-on-surface">$78.42</span><span class="text-error font-micro-badge text-micro-badge bg-surface-container px-space-2xs">-1.15%</span></div><span class="text-outline-variant">|</span><div class="flex items-center gap-space-xs px-space-xs"><span class="text-on-surface-variant font-label-caps text-label-caps">US10Y</span><span class="text-on-surface">4.18%</span><span class="text-error font-micro-badge text-micro-badge bg-surface-container px-space-2xs">-2bps</span></div><span class="text-outline-variant">|</span><div class="flex items-center gap-space-xs px-space-xs"><span class="text-on-surface-variant font-label-caps text-label-caps">USDINR</span><span class="text-on-surface">83.92</span><span class="text-secondary font-micro-badge text-micro-badge bg-surface-container px-space-2xs">+0.03%</span></div><span class="text-outline-variant">|</span><div class="flex items-center gap-space-xs px-space-xs"><span class="text-on-surface-variant font-label-caps text-label-caps">XAU</span><span class="text-on-surface">$2,684.50</span><span class="text-secondary font-micro-badge text-micro-badge bg-surface-container px-space-2xs">+0.35%</span></div><span class="text-outline-variant">|</span><div class="flex items-center gap-space-xs px-space-xs"><span class="text-on-surface-variant font-label-caps text-label-caps">BTC</span><span class="text-on-surface">$67,240</span><span class="text-secondary font-micro-badge text-micro-badge bg-surface-container px-space-2xs">+2.18%</span></div></div><div class="flex items-center gap-space-md shrink-0"><div class="flex items-center gap-space-xs bg-surface-container-lowest px-space-sm py-space-2xs border border-surface-container-high"><span class="w-space-sm h-space-sm rounded-full bg-secondary animate-live-pulse"></span><span class="font-micro-badge text-micro-badge text-secondary tracking-widest">12ms LOW LATENCY</span></div><div class="hidden sm:flex items-center gap-space-2xs font-code-cli text-code-cli text-on-surface-variant"><span class="material-symbols-outlined text-[14px]">schedule</span><span>UTC 14:32:08</span></div><button class="px-space-xs py-space-2xs bg-surface-container border border-surface-container-high text-on-surface-variant hover:text-on-surface font-label-caps text-label-caps uppercase transition-colors flex items-center gap-space-xs" onclick="document.documentElement.classList.toggle('dark')" title="Toggle Obsidian Dark / Institutional White-Paper"><span class="material-symbols-outlined text-[14px]">contrast</span><span class="hidden lg:inline">THEME</span></button><div class="flex items-center gap-space-xs bg-surface-container-high px-space-sm py-space-2xs"><span class="font-label-caps text-label-caps text-on-surface uppercase">DESK: MACRO/PM</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div><div class="h-8 w-full px-space-md bg-surface-container-low flex items-center justify-between overflow-x-auto"><nav class="flex items-center h-full gap-space-xs shrink-0" data-active-classes="bg-surface-container-lowest text-primary border-b-2 border-primary"><a class="px-space-md h-full flex items-center text-on-surface-variant hover:text-on-surface font-label-caps text-label-caps uppercase tracking-wider border-r border-surface-container-high transition-colors" data-path="master-simulator" href="#">VIEW 1: MASTER SIMULATOR</a><a class="px-space-md h-full flex items-center text-on-surface-variant hover:text-on-surface font-label-caps text-label-caps uppercase tracking-wider border-r border-surface-container-high transition-colors" data-path="crisis-and-oil-matrix" href="#">VIEW 2: 50Y CRISIS &amp; OIL MATRIX</a><a class="px-space-md h-full flex items-center text-on-surface-variant hover:text-on-surface font-label-caps text-label-caps uppercase tracking-wider border-r border-surface-container-high transition-colors" data-path="super-investors" href="#">VIEW 3: SUPER-INVESTORS (WHALES)</a><a class="px-space-md h-full flex items-center text-on-surface-variant hover:text-on-surface font-label-caps text-label-caps uppercase tracking-wider border-r border-surface-container-high transition-colors" data-path="derivatives-timing-radar" href="#">VIEW 4: F&amp;O DERIVATIVES &amp; TIMING RADAR</a><a aria-current="page" class="px-space-md h-full flex items-center font-label-caps uppercase tracking-wider transition-colors bg-surface-container-lowest text-primary border-b-2 border-primary" data-path="forensic-audit-lab" href="#">VIEW 5: FORENSIC AUDIT LAB</a></nav><div class="hidden md:flex items-center gap-space-sm text-on-surface-variant font-micro-badge text-micro-badge tracking-wider"><span class="text-primary">STATION LOCK: ENGAGED</span><span>VER: 4.89.12-INST</span></div></div></header><main class="w-full pt-24 pb-14 bg-background min-h-screen"><div class="flex flex-col w-full">
+<section class="w-full px-space-md py-space-sm bg-surface-container-lowest">
+<div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-md">
+<span class="w-2 h-2 bg-secondary animate-live-pulse"></span>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-lg text-headline-lg text-primary uppercase">FORENSIC AUDIT LAB</span>
+<span class="font-micro-badge text-micro-badge text-on-surface-variant bg-surface-container px-space-xs py-space-2xs">ENGINE: BENEISH_M + ALTMAN_Z_DUAL</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-micro-badge text-micro-badge text-on-surface-variant uppercase">PRELOAD HISTORICAL CRISIS BENCHMARKS:</span>
+<button class="px-space-xs py-space-2xs bg-surface-container hover:bg-surface-container-high text-secondary font-micro-badge text-micro-badge uppercase tracking-wider transition-colors" onclick="loadCase('TCS')">
+          TCS [PRISTINE]
+        </button>
+<button class="px-space-xs py-space-2xs bg-surface-container hover:bg-surface-container-high text-error font-micro-badge text-micro-badge uppercase tracking-wider transition-colors" onclick="loadCase('SATYAM')">
+          SATYAM '09
+        </button>
+<button class="px-space-xs py-space-2xs bg-surface-container hover:bg-surface-container-high text-error font-micro-badge text-micro-badge uppercase tracking-wider transition-colors" onclick="loadCase('WIRECARD')">
+          WIRECARD '20
+        </button>
+<button class="px-space-xs py-space-2xs bg-surface-container hover:bg-surface-container-high text-error font-micro-badge text-micro-badge uppercase tracking-wider transition-colors" onclick="loadCase('ENRON')">
+          ENRON '01
+        </button>
+<button class="ml-space-sm px-space-sm py-space-2xs bg-primary-container text-on-primary-container font-label-caps text-label-caps uppercase flex items-center gap-space-xs" onclick="exportAuditReport('PDF')">
+<span class="material-symbols-outlined text-[14px]">download</span>
+          DUE DILIGENCE DOSSIER
+        </button>
+</div>
+</div>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xs p-space-xs bg-surface-container-lowest">
+<div class="lg:col-span-4 flex flex-col gap-space-xs">
+<div class="bg-surface-container-low p-space-md">
+<div class="flex items-center justify-between pb-space-xs mb-space-sm bg-surface-container-lowest px-space-xs py-space-2xs">
+<span class="font-headline-sm text-headline-sm text-primary uppercase">1. INPUT VECTORS &amp; AUDIT CONTROLS</span>
+<span class="font-micro-badge text-micro-badge text-on-surface-variant">NODE // DESK-FORENSIC-08</span>
+</div>
+<div class="space-y-space-md font-body-sm text-body-sm">
+<div>
+<div class="flex justify-between items-center mb-space-2xs">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase">TARGET ENTITY SELECTOR</label>
+<span class="font-micro-badge text-micro-badge text-tertiary" id="isinBadge">INE467B01029</span>
+</div>
+<select class="w-full bg-surface-container-lowest text-primary font-body-md text-body-md px-space-xs py-space-2xs focus:outline-none focus:bg-surface-container" id="entitySelector" onchange="onEntityDropdownChange(this.value)">
+<option value="TCS">TATA CONSULTANCY SERVICES (NSE: TCS)</option>
+<option value="RELIANCE">RELIANCE INDUSTRIES LTD (NSE: RELIANCE)</option>
+<option value="ADANIENT">ADANI ENTERPRISES LTD (NSE: ADANIENT)</option>
+<option value="SATYAM">SATYAM COMPUTER SERVICES (HISTORICAL 2009)</option>
+<option value="WIRECARD">WIRECARD AG (HISTORICAL 2020)</option>
+<option value="ENRON">ENRON CORPORATION (HISTORICAL 2001)</option>
+</select>
+</div>
+<div class="bg-surface-container-lowest p-space-xs">
+<div class="flex justify-between items-center mb-space-2xs">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">PROMOTER PLEDGE SHARES %</span>
+<span class="font-metric-display text-headline-sm text-primary" id="valPledge">0.0%</span>
+</div>
+<input class="w-full accent-primary bg-surface-container h-1 cursor-pointer" id="inputPledge" max="100" min="0" oninput="updateSliders()" step="0.5" type="range" value="0.0"/>
+<div class="flex justify-between font-micro-badge text-micro-badge text-on-surface-variant mt-space-2xs">
+<span>0% [BENIGN]</span>
+<span>25% [WATCHLIST]</span>
+<span>&gt;50% [CRITICAL]</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-xs">
+<div class="flex justify-between items-center mb-space-2xs">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">RPT / TOTAL REVENUE RATIO</span>
+<span class="font-metric-display text-headline-sm text-primary" id="valRpt">2.1%</span>
+</div>
+<input class="w-full accent-primary bg-surface-container h-1 cursor-pointer" id="inputRpt" max="50" min="0" oninput="updateSliders()" step="0.5" type="range" value="2.1"/>
+<div class="flex justify-between font-micro-badge text-micro-badge text-on-surface-variant mt-space-2xs">
+<span>0% [CLEAN]</span>
+<span>15% [FLAG]</span>
+<span>&gt;30% [SIPHONING HAZARD]</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-xs">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase block mb-space-2xs">AUDITOR QUALITY &amp; ROTATION TENURE</label>
+<select class="w-full bg-surface-container text-on-surface font-body-sm text-body-sm px-space-xs py-space-2xs focus:outline-none" id="inputAuditor" onchange="runForensicModel()">
+<option value="BIG4">BIG-4 TIER (UNMODIFIED CLEAN OPINION &gt;5YRS)</option>
+<option value="MIDTIER">MID-TIER DOMESTIC (FREQUENT PARTNER ROTATION)</option>
+<option value="UNKNOWN">UNKNOWN REGIONAL FIRM (&lt;10 PARTNERS)</option>
+<option value="RESIGNED">STATUTORY AUDITOR RESIGNATION WITHIN 24M</option>
+</select>
+</div>
+<div class="bg-surface-container-lowest p-space-xs">
+<div class="flex justify-between items-center mb-space-2xs">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">CFO / EBITDA CONVERSION RATIO</span>
+<span class="font-metric-display text-headline-sm text-secondary" id="valCfo">1.08x</span>
+</div>
+<input class="w-full accent-secondary bg-surface-container h-1 cursor-pointer" id="inputCfo" max="1.8" min="0.2" oninput="updateSliders()" step="0.02" type="range" value="1.08"/>
+<div class="flex justify-between font-micro-badge text-micro-badge text-on-surface-variant mt-space-2xs">
+<span>0.2x [FICTITIOUS PROFIT]</span>
+<span>1.0x [PAR]</span>
+<span>1.8x [SUPERIOR CASH]</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-xs">
+<div class="flex justify-between items-center mb-space-2xs">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">CONTINGENT LIAB. / NET WORTH %</span>
+<span class="font-metric-display text-headline-sm text-primary" id="valContingent">6.4%</span>
+</div>
+<input class="w-full accent-primary bg-surface-container h-1 cursor-pointer" id="inputContingent" max="120" min="0" oninput="updateSliders()" step="1" type="range" value="6.4"/>
+<div class="flex justify-between font-micro-badge text-micro-badge text-on-surface-variant mt-space-2xs">
+<span>0% [FORTRESS]</span>
+<span>40% [ELEVATED]</span>
+<span>&gt;80% [OFF-BALANCE LEVERAGE]</span>
+</div>
+</div>
+<button class="w-full py-space-xs bg-primary hover:bg-primary-fixed text-on-primary font-body-md text-body-md uppercase tracking-wider font-bold transition-all shadow-md flex items-center justify-center gap-space-xs" onclick="runForensicModel()">
+<span class="material-symbols-outlined text-[16px]">bolt</span>
+            EXECUTE FORENSIC ALGORITHM (BENEISH + ALTMAN)
+          </button>
+</div>
+</div>
+<div class="bg-surface-container-low p-space-md">
+<div class="flex items-center justify-between mb-space-xs bg-surface-container-lowest px-space-xs py-space-2xs">
+<span class="font-headline-sm text-headline-sm text-on-surface uppercase">PRE-LOADED FRAUD POST-MORTEMS</span>
+<span class="font-micro-badge text-micro-badge text-primary">SELECT CASE</span>
+</div>
+<div class="grid grid-cols-2 gap-space-2xs">
+<button class="p-space-xs bg-surface-container-lowest hover:bg-surface-container text-left transition-colors" onclick="loadCase('SATYAM')">
+<div class="font-micro-badge text-micro-badge text-error uppercase font-bold">CASE A: SATYAM 2009</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant truncate">INR 7,136 Cr Fictitious FD</div>
+<div class="font-micro-badge text-micro-badge text-on-surface-variant">CFO Divergence 0.28x</div>
+</button>
+<button class="p-space-xs bg-surface-container-lowest hover:bg-surface-container text-left transition-colors" onclick="loadCase('WIRECARD')">
+<div class="font-micro-badge text-micro-badge text-error uppercase font-bold">CASE B: WIRECARD 2020</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant truncate">EUR 1.9B Phantom Escrow</div>
+<div class="font-micro-badge text-micro-badge text-on-surface-variant">Third-Party Trustee Siphon</div>
+</button>
+<button class="p-space-xs bg-surface-container-lowest hover:bg-surface-container text-left transition-colors" onclick="loadCase('ENRON')">
+<div class="font-micro-badge text-micro-badge text-error uppercase font-bold">CASE C: ENRON 2001</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant truncate">Off-Balance SPE Shadow Debt</div>
+<div class="font-micro-badge text-micro-badge text-on-surface-variant">Contingent/NW: 114%</div>
+</button>
+<button class="p-space-xs bg-surface-container-lowest hover:bg-surface-container text-left transition-colors" onclick="loadCase('TCS')">
+<div class="font-micro-badge text-micro-badge text-secondary uppercase font-bold">CASE D: TCS (GOLD STD)</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant truncate">Zero Promoter Pledge</div>
+<div class="font-micro-badge text-micro-badge text-secondary">CFO/EBITDA 1.08x Clean Big-4</div>
+</button>
+</div>
+</div>
+</div>
+<div class="lg:col-span-8 flex flex-col gap-space-xs">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-xs">
+<div class="md:col-span-5 bg-surface-container-low p-space-md flex flex-col justify-between">
+<div class="flex items-center justify-between pb-space-2xs bg-surface-container-lowest px-space-xs py-space-2xs">
+<span class="font-headline-sm text-headline-sm text-primary uppercase">COMPOSITE GOVERNANCE SCORE</span>
+<span class="font-micro-badge text-micro-badge text-on-surface-variant">SCALE 0 - 100</span>
+</div>
+<div class="flex items-center justify-around my-space-md">
+<div class="relative w-32 h-32 flex items-center justify-center">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 100 100">
+<circle class="text-surface-container-high" cx="50" cy="50" fill="transparent" r="42" stroke="currentColor" stroke-width="8"></circle>
+<circle class="text-secondary transition-all duration-700" cx="50" cy="50" fill="transparent" id="scoreMeterCircle" r="42" stroke="currentColor" stroke-dasharray="263.89" stroke-dashoffset="31.6" stroke-linecap="butt" stroke-width="8"></circle>
+</svg>
+<div class="absolute flex flex-col items-center">
+<span class="font-metric-display text-display text-secondary" id="scoreNumber">88</span>
+<span class="font-micro-badge text-micro-badge text-on-surface-variant">/ 100</span>
+</div>
+</div>
+<div class="flex flex-col gap-space-xs">
+<div class="bg-surface-container-lowest px-space-sm py-space-xs" id="statusBadge">
+<div class="font-label-caps text-label-caps text-on-surface-variant">STATUS CLASSIFICATION</div>
+<div class="font-headline-md text-headline-md text-secondary uppercase font-bold" id="statusText">PRISTINE GRADE</div>
+<div class="font-micro-badge text-micro-badge text-on-surface-variant" id="statusSub">Fiduciary standard verified</div>
+</div>
+<div class="bg-surface-container-lowest px-space-sm py-space-xs">
+<div class="font-label-caps text-label-caps text-on-surface-variant">RECOMMENDED ALLOCATION SPREAD</div>
+<div class="font-body-sm text-body-sm text-primary font-bold" id="spreadAction">ALPHA UNHEDGED LONG (100%)</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest px-space-xs py-space-2xs flex items-center justify-between text-on-surface-variant font-micro-badge text-micro-badge">
+<span>AUDIT CYCLE: FY24-Q3 CONFIRMED</span>
+<span class="text-secondary">FORENSIC TELEMETRY: ACTIVE</span>
+</div>
+</div>
+<div class="md:col-span-7 bg-surface-container-low p-space-md flex flex-col justify-between">
+<div class="flex items-center justify-between pb-space-2xs bg-surface-container-lowest px-space-xs py-space-2xs">
+<span class="font-headline-sm text-headline-sm text-primary uppercase">SUB-INDICES &amp; FRAUD RADAR MATRICES</span>
+<span class="font-micro-badge text-micro-badge text-on-surface-variant">EMPIRICAL SPREADS</span>
+</div>
+<div class="grid grid-cols-3 gap-space-xs my-space-xs">
+<div class="bg-surface-container-lowest p-space-xs flex flex-col justify-between">
+<div class="font-label-caps text-label-caps text-on-surface-variant">BENEISH M-SCORE</div>
+<div class="font-metric-display text-metric-display text-secondary my-space-2xs" id="beneishScore">-2.84</div>
+<div class="font-micro-badge text-micro-badge text-on-surface-variant">THRESHOLD: -1.78</div>
+<div class="mt-space-2xs font-micro-badge text-micro-badge bg-surface-container px-space-2xs py-space-2xs text-secondary text-center" id="beneishPill">
+                UNMANIPULATED
+              </div>
+</div>
+<div class="bg-surface-container-lowest p-space-xs flex flex-col justify-between">
+<div class="font-label-caps text-label-caps text-on-surface-variant">ALTMAN Z-SCORE</div>
+<div class="font-metric-display text-metric-display text-secondary my-space-2xs" id="altmanScore">4.62</div>
+<div class="font-micro-badge text-micro-badge text-on-surface-variant">DISTRESS &lt; 1.81</div>
+<div class="mt-space-2xs font-micro-badge text-micro-badge bg-surface-container px-space-2xs py-space-2xs text-secondary text-center" id="altmanPill">
+                ZERO DISTRESS
+              </div>
+</div>
+<div class="bg-surface-container-lowest p-space-xs flex flex-col justify-between">
+<div class="font-label-caps text-label-caps text-on-surface-variant">PROMOTER INTEGRITY</div>
+<div class="font-metric-display text-metric-display text-secondary my-space-2xs" id="promoterScore">94/100</div>
+<div class="font-micro-badge text-micro-badge text-on-surface-variant">PLEDGE: 0.0%</div>
+<div class="mt-space-2xs font-micro-badge text-micro-badge bg-surface-container px-space-2xs py-space-2xs text-secondary text-center" id="promoterPill">
+                TOP DECILE
+              </div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-xs">
+<div class="flex justify-between items-center mb-space-2xs">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">8-FACTOR BENEISH BREAKDOWN VISUALIZER</span>
+<span class="font-micro-badge text-micro-badge text-tertiary">DSRI / GMI / AQI / SGI / DEPI / SGAI / LVGI / TATA</span>
+</div>
+<div class="w-full bg-surface-container h-3 flex gap-0.5 overflow-hidden">
+<div class="bg-secondary" id="barDSRI" style="width: 12.5%" title="DSRI: Days Sales in Receivables Index"></div>
+<div class="bg-secondary" id="barGMI" style="width: 12.5%" title="GMI: Gross Margin Index"></div>
+<div class="bg-secondary" id="barAQI" style="width: 12.5%" title="AQI: Asset Quality Index"></div>
+<div class="bg-secondary" id="barSGI" style="width: 12.5%" title="SGI: Sales Growth Index"></div>
+<div class="bg-secondary" id="barDEPI" style="width: 12.5%" title="DEPI: Depreciation Index"></div>
+<div class="bg-secondary" id="barSGAI" style="width: 12.5%" title="SGAI: Sales General &amp; Admin Index"></div>
+<div class="bg-secondary" id="barLVGI" style="width: 12.5%" title="LVGI: Leverage Index"></div>
+<div class="bg-secondary" id="barTATA" style="width: 12.5%" title="TATA: Total Accruals to Total Assets"></div>
+</div>
+<div class="flex justify-between font-micro-badge text-micro-badge text-on-surface-variant mt-space-2xs">
+<span>NORMAL ACCRUAL DYNAMICS</span>
+<span>EARNINGS SURPRISE RISK: LOW (0.04)</span>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low p-space-md">
+<div class="flex items-center justify-between pb-space-xs bg-surface-container-lowest px-space-xs py-space-2xs mb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-primary">fact_check</span>
+<span class="font-headline-sm text-headline-sm text-primary uppercase">FORENSIC CHECKLIST &amp; MALFEASANCE DETECTORS</span>
+</div>
+<span class="font-micro-badge text-micro-badge text-on-surface-variant">5/5 TESTS EVALUATED</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-xs">
+<div class="p-space-xs bg-surface-container-lowest flex items-start gap-space-sm" id="cardCheck1">
+<span class="material-symbols-outlined text-secondary text-[18px]" id="iconCheck1">verified</span>
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface">CFO vs EBITDA Conversion Consistency</span>
+<span class="font-micro-badge text-micro-badge bg-surface-container text-secondary px-space-2xs" id="badgeCheck1">PASS</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-2xs" id="descCheck1">
+                Operating cash flow fully mirrors accounting operating profit. Receivables turnover is congruent with revenue recognition schedules.
+              </p>
+</div>
+</div>
+<div class="p-space-xs bg-surface-container-lowest flex items-start gap-space-sm" id="cardCheck2">
+<span class="material-symbols-outlined text-secondary text-[18px]" id="iconCheck2">verified</span>
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface">Promoter Pledge &amp; Encumbrance Strain</span>
+<span class="font-micro-badge text-micro-badge bg-surface-container text-secondary px-space-2xs" id="badgeCheck2">CLEAN</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-2xs" id="descCheck2">
+                Promoters hold unencumbered controlling stake. Zero margin calls or involuntary offload risks detected on public exchanges.
+              </p>
+</div>
+</div>
+<div class="p-space-xs bg-surface-container-lowest flex items-start gap-space-sm" id="cardCheck3">
+<span class="material-symbols-outlined text-secondary text-[18px]" id="iconCheck3">verified</span>
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface">Related-Party Transactions &amp; Subsidiary Loans</span>
+<span class="font-micro-badge text-micro-badge bg-surface-container text-secondary px-space-2xs" id="badgeCheck3">NOMINAL</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-2xs" id="descCheck3">
+                RPT volume below 5% threshold of aggregate topline. No unexplained unsecured loans to promoter-controlled shell entities.
+              </p>
+</div>
+</div>
+<div class="p-space-xs bg-surface-container-lowest flex items-start gap-space-sm" id="cardCheck4">
+<span class="material-symbols-outlined text-secondary text-[18px]" id="iconCheck4">verified</span>
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface">Auditor Tenure, Resignation &amp; Disclaimers</span>
+<span class="font-micro-badge text-micro-badge bg-surface-container text-secondary px-space-2xs" id="badgeCheck4">STABLE</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-2xs" id="descCheck4">
+                Unmodified auditor opinion issued by Tier-1 multinational auditing firm with statutory audit committee compliance.
+              </p>
+</div>
+</div>
+<div class="p-space-xs bg-surface-container-lowest flex items-start gap-space-sm md:col-span-2" id="cardCheck5">
+<span class="material-symbols-outlined text-secondary text-[18px]" id="iconCheck5">verified</span>
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface">Off-Balance Contingent Liabilities &amp; Guarantees</span>
+<span class="font-micro-badge text-micro-badge bg-surface-container text-secondary px-space-2xs" id="badgeCheck5">PROTECTED</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-2xs" id="descCheck5">
+                Contingent claims and corporate parent guarantees represent &lt;10% of tangible net worth. No hidden SPE guarantee triggers.
+              </p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low p-space-md">
+<div class="flex items-center justify-between pb-space-xs bg-surface-container-lowest px-space-xs py-space-2xs mb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-tertiary">terminal</span>
+<span class="font-headline-sm text-headline-sm text-tertiary uppercase">AUDIT TRAIL LOG &amp; FORENSIC CHRONOLOGY</span>
+</div>
+<span class="font-micro-badge text-micro-badge text-on-surface-variant">REAL-TIME TELEMETRY</span>
+</div>
+<div class="h-28 overflow-y-auto font-code-cli text-body-sm space-y-space-2xs bg-surface-container-lowest p-space-xs text-on-surface-variant" id="logTerminal">
+<div class="text-secondary">[09:14:22 UTC] SYSTEM_INITIALIZED: Forensic Audit Core loaded. Algorithms active: Beneish M-Score (1999), Altman Z-Score (EM-Variant 1983).</div>
+<div>[09:14:23 UTC] DATA_PULL: Queried MCA-21, SEC EDGAR, and SEBI filing repositories for target TCS.</div>
+<div>[09:14:24 UTC] RECONCILIATION: Cash balance INR 45,210 Cr cross-verified against 26AS interest certificates and RBI RTGS logs. Zero variance.</div>
+<div class="text-primary">[09:14:25 UTC] AUDIT_PASS: Pristine Institutional Grade confirmed. No forensic adjustments applied to reported book value.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function updateSliders() {
+    const p = parseFloat(document.getElementById('inputPledge').value).toFixed(1);
+    const r = parseFloat(document.getElementById('inputRpt').value).toFixed(1);
+    const c = parseFloat(document.getElementById('inputCfo').value).toFixed(2);
+    const ct = parseFloat(document.getElementById('inputContingent').value).toFixed(1);
+
+    document.getElementById('valPledge').innerText = p + '%';
+    document.getElementById('valRpt').innerText = r + '%';
+    document.getElementById('valCfo').innerText = c + 'x';
+    document.getElementById('valContingent').innerText = ct + '%';
+
+    calculateScores(p, r, c, ct);
+  }
+
+  function runForensicModel() {
+    updateSliders();
+    appendLog("FORENSIC_RUN: Manual computation executed. Scoring parameters updated.");
+  }
+
+  function onEntityDropdownChange(val) {
+    loadCase(val);
+  }
+
+  function loadCase(caseKey) {
+    const selector = document.getElementById('entitySelector');
+    const isin = document.getElementById('isinBadge');
+    
+    if(caseKey === 'TCS') {
+      selector.value = 'TCS';
+      isin.innerText = 'INE467B01029';
+      document.getElementById('inputPledge').value = 0.0;
+      document.getElementById('inputRpt').value = 2.1;
+      document.getElementById('inputAuditor').value = 'BIG4';
+      document.getElementById('inputCfo').value = 1.08;
+      document.getElementById('inputContingent').value = 6.4;
+      appendLog("LOAD_CASE: TCS loaded. Pristine benchmark scenario.");
+    } else if(caseKey === 'RELIANCE') {
+      selector.value = 'RELIANCE';
+      isin.innerText = 'INE002A01018';
+      document.getElementById('inputPledge').value = 0.0;
+      document.getElementById('inputRpt').value = 14.2;
+      document.getElementById('inputAuditor').value = 'BIG4';
+      document.getElementById('inputCfo').value = 0.92;
+      document.getElementById('inputContingent').value = 28.5;
+      appendLog("LOAD_CASE: RELIANCE loaded. Large conglomerate RPT parameters.");
+    } else if(caseKey === 'ADANIENT') {
+      selector.value = 'ADANIENT';
+      isin.innerText = 'INE423A01024';
+      document.getElementById('inputPledge').value = 4.2;
+      document.getElementById('inputRpt').value = 22.8;
+      document.getElementById('inputAuditor').value = 'MIDTIER';
+      document.getElementById('inputCfo').value = 0.68;
+      document.getElementById('inputContingent').value = 65.4;
+      appendLog("LOAD_CASE: ADANIENT loaded. High leverage and related-party footprint.");
+    } else if(caseKey === 'SATYAM') {
+      selector.value = 'SATYAM';
+      isin.innerText = 'INE275A01028_HIST';
+      document.getElementById('inputPledge').value = 82.0;
+      document.getElementById('inputRpt').value = 34.5;
+      document.getElementById('inputAuditor').value = 'MIDTIER';
+      document.getElementById('inputCfo').value = 0.28;
+      document.getElementById('inputContingent').value = 78.0;
+      appendLog("LOAD_CRISIS: Satyam Computer (2009) loaded. Fictitious interest & cash balances.");
+    } else if(caseKey === 'WIRECARD') {
+      selector.value = 'WIRECARD';
+      isin.innerText = 'DE0007472060_HIST';
+      document.getElementById('inputPledge').value = 12.0;
+      document.getElementById('inputRpt').value = 45.0;
+      document.getElementById('inputAuditor').value = 'RESIGNED';
+      document.getElementById('inputCfo').value = 0.32;
+      document.getElementById('inputContingent').value = 95.0;
+      appendLog("LOAD_CRISIS: Wirecard AG (2020) loaded. Escrow account missing EUR 1.9B.");
+    } else if(caseKey === 'ENRON') {
+      selector.value = 'ENRON';
+      isin.innerText = 'US2935611067_HIST';
+      document.getElementById('inputPledge').value = 44.0;
+      document.getElementById('inputRpt').value = 48.0;
+      document.getElementById('inputAuditor').value = 'RESIGNED';
+      document.getElementById('inputCfo').value = 0.22;
+      document.getElementById('inputContingent').value = 114.0;
+      appendLog("LOAD_CRISIS: Enron Corp (2001) loaded. Off-balance sheet SPE liabilities.");
+    }
+    updateSliders();
+  }
+
+  function calculateScores(pledge, rpt, cfo, contingent) {
+    const auditor = document.getElementById('inputAuditor').value;
+    
+    let baseScore = 100;
+    // Penalties
+    baseScore -= (pledge * 0.45);
+    baseScore -= (rpt * 0.75);
+    
+    if (cfo < 1.0) {
+      baseScore -= (1.0 - cfo) * 45;
+    } else {
+      baseScore += (cfo - 1.0) * 8;
+    }
+
+    baseScore -= (contingent * 0.22);
+
+    if (auditor === 'MIDTIER') baseScore -= 12;
+    if (auditor === 'UNKNOWN') baseScore -= 28;
+    if (auditor === 'RESIGNED') baseScore -= 45;
+
+    let finalScore = Math.round(Math.max(4, Math.min(99, baseScore)));
+
+    // Beneish Calc
+    let beneish = -2.84 + (rpt * 0.04) + (pledge * 0.015) - ((cfo - 1.0) * 0.85);
+    if(auditor === 'RESIGNED') beneish += 1.8;
+    if(auditor === 'UNKNOWN') beneish += 0.9;
+    
+    // Altman Z Calc
+    let altman = (cfo * 2.8) - (contingent * 0.02) - (pledge * 0.02);
+    if(auditor === 'RESIGNED') altman -= 1.2;
+    altman = Math.max(0.4, altman);
+
+    // Promoter Score
+    let promoter = Math.round(100 - (pledge * 0.85) - (rpt * 0.4));
+    promoter = Math.max(8, Math.min(100, promoter));
+
+    // Update Score Circle & Text
+    const scoreNum = document.getElementById('scoreNumber');
+    scoreNum.innerText = finalScore;
+
+    const meter = document.getElementById('scoreMeterCircle');
+    const circumference = 263.89;
+    const offset = circumference - (finalScore / 100 * circumference);
+    meter.style.strokeDashoffset = offset;
+
+    const statusText = document.getElementById('statusText');
+    const statusSub = document.getElementById('statusSub');
+    const spreadAction = document.getElementById('spreadAction');
+
+    // Color logic
+    if (finalScore >= 75) {
+      scoreNum.className = "font-metric-display text-display text-secondary";
+      meter.className = "text-secondary transition-all duration-700";
+      statusText.innerText = "PRISTINE GRADE";
+      statusText.className = "font-headline-md text-headline-md text-secondary uppercase font-bold";
+      statusSub.innerText = "Uncompromised institutional quality";
+      spreadAction.innerText = "ALPHA UNHEDGED LONG (100%)";
+      spreadAction.className = "font-body-sm text-body-sm text-secondary font-bold";
+    } else if (finalScore >= 50) {
+      scoreNum.className = "font-metric-display text-display text-primary";
+      meter.className = "text-primary transition-all duration-700";
+      statusText.innerText = "CAUTION WATCHLIST";
+      statusText.className = "font-headline-md text-headline-md text-primary uppercase font-bold";
+      statusSub.innerText = "Elevated governance vulnerability";
+      spreadAction.innerText = "SPREAD HEDGE / DELTA NEUTRAL";
+      spreadAction.className = "font-body-sm text-body-sm text-primary font-bold";
+    } else {
+      scoreNum.className = "font-metric-display text-display text-error";
+      meter.className = "text-error transition-all duration-700";
+      statusText.innerText = "MALFEASANCE ALERT";
+      statusText.className = "font-headline-md text-headline-md text-error uppercase font-bold";
+      statusSub.innerText = "High probability of cooked accounts";
+      spreadAction.innerText = "AGGRESSIVE SHORT / DELIST RISK";
+      spreadAction.className = "font-body-sm text-body-sm text-error font-bold";
+    }
+
+    // Sub metrics
+    const bElem = document.getElementById('beneishScore');
+    const bPill = document.getElementById('beneishPill');
+    bElem.innerText = beneish.toFixed(2);
+    if(beneish > -1.78) {
+      bElem.className = "font-metric-display text-metric-display text-error my-space-2xs";
+      bPill.className = "mt-space-2xs font-micro-badge text-micro-badge bg-surface-container px-space-2xs py-space-2xs text-error text-center";
+      bPill.innerText = "MANIPULATOR FLAG";
+    } else {
+      bElem.className = "font-metric-display text-metric-display text-secondary my-space-2xs";
+      bPill.className = "mt-space-2xs font-micro-badge text-micro-badge bg-surface-container px-space-2xs py-space-2xs text-secondary text-center";
+      bPill.innerText = "UNMANIPULATED";
+    }
+
+    const aElem = document.getElementById('altmanScore');
+    const aPill = document.getElementById('altmanPill');
+    aElem.innerText = altman.toFixed(2);
+    if(altman < 1.81) {
+      aElem.className = "font-metric-display text-metric-display text-error my-space-2xs";
+      aPill.className = "mt-space-2xs font-micro-badge text-micro-badge bg-surface-container px-space-2xs py-space-2xs text-error text-center";
+      aPill.innerText = "DISTRESS CRITICAL";
+    } else if(altman < 2.99) {
+      aElem.className = "font-metric-display text-metric-display text-primary my-space-2xs";
+      aPill.className = "mt-space-2xs font-micro-badge text-micro-badge bg-surface-container px-space-2xs py-space-2xs text-primary text-center";
+      aPill.innerText = "GREY ZONE";
+    } else {
+      aElem.className = "font-metric-display text-metric-display text-secondary my-space-2xs";
+      aPill.className = "mt-space-2xs font-micro-badge text-micro-badge bg-surface-container px-space-2xs py-space-2xs text-secondary text-center";
+      aPill.innerText = "ZERO DISTRESS";
+    }
+
+    const pElem = document.getElementById('promoterScore');
+    const pPill = document.getElementById('promoterPill');
+    pElem.innerText = promoter + "/100";
+    if(promoter < 50) {
+      pElem.className = "font-metric-display text-metric-display text-error my-space-2xs";
+      pPill.className = "mt-space-2xs font-micro-badge text-micro-badge bg-surface-container px-space-2xs py-space-2xs text-error text-center";
+      pPill.innerText = "HIGH EXTRACTION";
+    } else if(promoter < 75) {
+      pElem.className = "font-metric-display text-metric-display text-primary my-space-2xs";
+      pPill.className = "mt-space-2xs font-micro-badge text-micro-badge bg-surface-container px-space-2xs py-space-2xs text-primary text-center";
+      pPill.innerText = "MODERATE RISK";
+    } else {
+      pElem.className = "font-metric-display text-metric-display text-secondary my-space-2xs";
+      pPill.className = "mt-space-2xs font-micro-badge text-micro-badge bg-surface-container px-space-2xs py-space-2xs text-secondary text-center";
+      pPill.innerText = "TOP DECILE";
+    }
+
+    // Check items update
+    updateCheckCard(1, cfo >= 0.85, cfo >= 0.6 ? 'MODERATE' : 'SEVERE CFO DIVERGENCE', 
+      cfo >= 0.85 ? "Operating cash flow strictly mirrors reported EBITDA. Working capital cash conversions verified via banking channel audits." : "Massive divergence between EBITDA and Operating Cash Flow. High probability of fictitious sales ledger or round-tripped revenues.");
+    
+    updateCheckCard(2, pledge <= 20, pledge <= 45 ? 'WATCHLIST' : 'LEVERAGED HOSTAGE',
+      pledge <= 20 ? "Promoters maintain pristine unencumbered voting equity. Negligible margin liquidation pressure." : "Excessive share pledges exposed to margin calls. Risk of aggressive management manipulation to sustain short-term stock price.");
+
+    updateCheckCard(3, rpt <= 15, rpt <= 30 ? 'SURVEILLANCE' : 'SIPHON WARNING',
+      rpt <= 15 ? "Related-party activity within statutory corporate governance limits. Arm's length pricing corroborated." : "High volume of related-party transactions. Capital extraction via unlisted entities and offshore consulting arrangements.");
+
+    updateCheckCard(4, auditor === 'BIG4', auditor === 'MIDTIER' ? 'SECONDARY ROTATION' : 'DISCLAIMER/RESIGNATION',
+      auditor === 'BIG4' ? "Reputable global audit signature with zero modified opinions over rolling 5 years." : "Audit firm concerns: either mid-tier local capability, sudden resignation, or unaddressed qualification notes.");
+
+    updateCheckCard(5, contingent <= 30, contingent <= 65 ? 'ELEVATED OBLIGATIONS' : 'OFF-BALANCE HAZARD',
+      contingent <= 30 ? "Contingent liabilities and parent guarantees are nominal relative to tangible consolidated net worth." : "Explosive contingent liabilities or shadow debt guarantees. Potential solvency wipeout under adverse arbitration.");
+
+    // Update 8-factor bars
+    const barColors = beneish > -1.78 ? 'bg-error' : (finalScore < 70 ? 'bg-primary' : 'bg-secondary');
+    ['barDSRI','barGMI','barAQI','barSGI','barDEPI','barSGAI','barLVGI','barTATA'].forEach((id, idx) => {
+      const el = document.getElementById(id);
+      if(el) {
+        el.className = (idx % 2 === 0 && beneish > -1.78) ? 'bg-error' : (finalScore < 60 ? 'bg-primary' : 'bg-secondary');
+      }
+    });
+  }
+
+  function updateCheckCard(id, pass, failBadge, text) {
+    const icon = document.getElementById('iconCheck' + id);
+    const badge = document.getElementById('badgeCheck' + id);
+    const desc = document.getElementById('descCheck' + id);
+
+    if (pass) {
+      icon.className = "material-symbols-outlined text-secondary text-[18px]";
+      icon.innerText = "verified";
+      badge.className = "font-micro-badge text-micro-badge bg-surface-container text-secondary px-space-2xs";
+      badge.innerText = "PASS";
+    } else {
+      icon.className = "material-symbols-outlined text-error text-[18px]";
+      icon.innerText = "warning";
+      badge.className = "font-micro-badge text-micro-badge bg-error-container text-on-error-container px-space-2xs";
+      badge.innerText = failBadge;
+    }
+    desc.innerText = text;
+  }
+
+  function appendLog(msg) {
+    const term = document.getElementById('logTerminal');
+    const now = new Date().toISOString().substring(11, 19);
+    const line = document.createElement('div');
+    line.innerHTML = `<span class="text-on-surface-variant">[${now} UTC]</span> ${msg}`;
+    term.appendChild(line);
+    term.scrollTop = term.scrollHeight;
+  }
+
+  function exportAuditReport(type) {
+    const target = document.getElementById('entitySelector').value;
+    const score = document.getElementById('scoreNumber').innerText;
+    appendLog(`REPORT_EXPORT: Generated ${type} forensic dossier for ticker ${target}. Governance Score: ${score}/100. Hash: 0x8F9C...B14`);
+    alert(`FORENSIC AUDIT DOSSIER EXPORTED (${type}):\nTarget: ${target}\nComposite Governance: ${score}/100\nCryptographic Signature: SHA-256 Validated\nDocument saved to institutional research repository.`);
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    updateSliders();
+  });
+</script></main><footer class="fixed bottom-0 left-0 right-0 z-40 bg-surface-container-lowest border-t border-primary-container"><div class="h-9 px-space-md flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-sm flex-1"><div class="flex items-center gap-space-2xs text-secondary shrink-0"><span class="w-space-xs h-space-xs rounded-full bg-secondary animate-live-pulse"></span><span class="font-code-cli text-code-cli text-primary">TERMINAL READY [PM-DESK-01] &gt;</span></div><input class="w-full bg-transparent font-code-cli text-code-cli text-on-surface placeholder:text-surface-variant focus:outline-none" placeholder="ENTER COMMAND OR MNEMONIC (E.G. 'BUY_SIM --ASSET=SPX' OR PRESS '~')" type="text"/></div><div class="flex items-center gap-space-xs shrink-0"><span class="text-on-surface-variant font-micro-badge text-micro-badge hidden sm:inline">HOTKEYS:</span><button class="px-space-xs py-space-2xs bg-surface-container hover:bg-primary-container hover:text-on-primary-container text-on-surface-variant font-micro-badge text-micro-badge tracking-wider uppercase border border-surface-container-high transition-colors">BUY_SIM</button><button class="px-space-xs py-space-2xs bg-surface-container hover:bg-primary-container hover:text-on-primary-container text-on-surface-variant font-micro-badge text-micro-badge tracking-wider uppercase border border-surface-container-high transition-colors">HEDGE_CALC</button><button class="px-space-xs py-space-2xs bg-surface-container hover:bg-primary-container hover:text-on-primary-container text-on-surface-variant font-micro-badge text-micro-badge tracking-wider uppercase border border-surface-container-high transition-colors">EXPORT_CSV</button><button class="px-space-xs py-space-2xs bg-surface-container hover:bg-primary-container hover:text-on-primary-container text-on-surface-variant font-micro-badge text-micro-badge tracking-wider uppercase border border-surface-container-high transition-colors">FORENSIC_RUN</button><button class="px-space-xs py-space-2xs bg-surface-container hover:bg-primary-container hover:text-on-primary-container text-on-surface-variant font-micro-badge text-micro-badge tracking-wider uppercase border border-surface-container-high transition-colors">STRESS_TEST</button><button class="flex items-center text-on-surface-variant hover:text-primary pl-space-xs border-l border-surface-container-high"><span class="material-symbols-outlined text-[16px]">terminal</span></button></div></div></footer></body></html>

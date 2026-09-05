@@ -1,0 +1,130 @@
+/**
+ * BHARAT ALPHA TERMINAL - MACRO & HISTORICAL TRANSMISSION DATA
+ */
+
+export const CRISIS_MATRIX = [
+  {
+    epoch: "1992",
+    event: "Harshad Mehta Scam",
+    drawdown: "-54.2%",
+    indexMove: "Sensex: 4,467 → 2,040",
+    troughDate: "April 1993",
+    recoveryMonths: 18,
+    driver: "Ready Forward bank receipts misused to funnel PSU bank treasury funds to corner speculative equities (ACC skyrocketed).",
+    reforms: "SEBI statutory charter (SEBI Act 1992), Dematerialization Act (NSDL/CDSL), birth of the National Stock Exchange (NSE)."
+  },
+  {
+    epoch: "1998",
+    event: "Pokhran Sanctions & AFC",
+    drawdown: "-38.4%",
+    indexMove: "Sensex: 4,322 → 2,741",
+    troughDate: "October 1998",
+    recoveryMonths: 14,
+    driver: "US sanctions post nuclear tests, sovereign credit downgrade to junk, Thai Baht contagion triggering emerging market liquidations.",
+    reforms: "Resurgent India Bonds ($4.2B Forex mobilized), Golden Quadrilateral infrastructure push by Vajpayee administration."
+  },
+  {
+    epoch: "2000–2001",
+    event: "Ketan Parekh ICE Bubble",
+    drawdown: "-56.3%",
+    indexMove: "Sensex: 6,150 → 2,600",
+    troughDate: "September 2001",
+    recoveryMonths: 28,
+    driver: "Circular leverage in K-10 tech stocks (HFCL, DSQ, Global Tele) using co-op bank pay orders; NASDAQ collapse & 9/11 shock.",
+    reforms: "Centuries-old Badla settlement abolished (July 2001), NSE equity derivatives (F&O) born, Rolling Settlement (T+2) mandated."
+  },
+  {
+    epoch: "2008",
+    event: "Great Financial Crisis",
+    drawdown: "-64.8%",
+    indexMove: "Nifty: 6,357 → 2,252",
+    troughDate: "March 2009",
+    recoveryMonths: 19,
+    driver: "US subprime freeze, Lehman bankruptcy, dollar funding drought, FII net liquidation of ₹53,000 Cr ($12B).",
+    reforms: "Aggressive counter-cyclical monetary policy (Repo cut to 4.75%), domestic liquidity injection, P-Notes transparency."
+  },
+  {
+    epoch: "2013",
+    event: "Fragile Five Taper Tantrum",
+    drawdown: "-17.4%",
+    indexMove: "Sensex: 20,443 → 17,448 (Midcaps -33%)",
+    troughDate: "August 2013",
+    recoveryMonths: 9,
+    driver: "Fed QE tapering telegraph, twin deficits with CAD hitting record 4.8% of GDP, USD/INR crashed to 68.85.",
+    reforms: "RBI FCNR(B) swap window raising $34B forex cushion, Urjit Patel Inflation-Targeting Framework (4% ± 2%)."
+  },
+  {
+    epoch: "2016 / 2018",
+    event: "Demonetization & IL&FS Crisis",
+    drawdown: "-15.6%",
+    indexMove: "Mid/Smallcaps: -42%",
+    troughDate: "Oct 2018 / Aug 2019",
+    recoveryMonths: 14,
+    driver: "86% cash ban (2016); AAA-rated IL&FS default (2018) triggering shadow-banking freeze, mutual fund credit runs.",
+    reforms: "Insolvency and Bankruptcy Code (IBC 2016) enforcement, Corporate Tax slashed to 22% (Sept 2019), banking AQR clean-up."
+  },
+  {
+    epoch: "2020",
+    event: "COVID-19 Flash Crash",
+    drawdown: "-39.8%",
+    indexMove: "Nifty: 12,430 → 7,511",
+    troughDate: "March 23, 2020",
+    recoveryMonths: 7,
+    driver: "Global quarantine, complete supply-chain halt, record single-month FII dump of ₹61,973 Cr in March 2020.",
+    reforms: "Retail SIP explosion (monthly SIPs surged from ₹8,000 Cr to >₹24,000 Cr), Demat accounts crossed 160M, PLI schemes."
+  }
+];
+
+export const CRUDE_SCENARIOS = {
+  sweetSpot: {
+    priceRange: "$60 – $75 / bbl",
+    cadImpact: "CAD shrinks below 1.2% of GDP",
+    inflation: "CPI anchored below 4.5%",
+    corporateImpact: "EBITDA bonanza for Paints (Asian Paints), Adhesives (Pidilite), Tyres (MRF), Airlines (IndiGo).",
+    valuationMultiple: "Nifty P/E expands +1.5x to +2.5x on margin certainty."
+  },
+  frictionPoint: {
+    priceRange: "$85 – $95 / bbl",
+    cadImpact: "CAD between 1.8%–2.2% of GDP",
+    inflation: "CPI hovers near 5.0%–5.5%",
+    corporateImpact: "Upstream (ONGC, Oil India) benefits; downstream OMCs face retail fuel marketing margin freezes.",
+    valuationMultiple: "Nifty multiples hold baseline 20.5x–22.0x."
+  },
+  stressZone: {
+    priceRange: "$110 – $130+ / bbl",
+    cadImpact: "CAD widens above 3.2% of GDP",
+    inflation: "CPI breaches 6.5% upper band",
+    corporateImpact: "150-300 bps operating margin compression across automotive, FMCG, and capital goods.",
+    valuationMultiple: "Nifty derates 10%–18% as institutional risk premium surges."
+  }
+};
+
+export const MACRO_MILESTONES = [
+  {
+    epoch: "Current Baseline (2025-26)",
+    gdp: "$4.0 Trillion",
+    mcap: "$5.2 Trillion",
+    niftyEps: "₹1,075 – ₹1,215",
+    niftyBase: "25,200",
+    sensexBase: "82,500",
+    fairPe: "21.5x"
+  },
+  {
+    epoch: "Milestone 1 (2027-28)",
+    gdp: "$5.0 Trillion",
+    mcap: "$6.5 Trillion",
+    niftyEps: "₹1,560",
+    niftyBase: "33,500",
+    sensexBase: "1,10,000",
+    fairPe: "21.5x"
+  },
+  {
+    epoch: "Milestone 2 (2029-30)",
+    gdp: "$7.2 Trillion",
+    mcap: "$9.3 Trillion",
+    niftyEps: "₹2,020",
+    niftyBase: "42,400",
+    sensexBase: "1,38,000",
+    fairPe: "21.0x"
+  }
+];

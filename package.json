@@ -1,0 +1,23 @@
+{
+  "name": "bharat-alpha-terminal",
+  "version": "2.6.0",
+  "description": "Institutional Equities Research & Predictive Allocation Operating System (2026-2030)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "serve": "node server.js",
+    "build": "echo Zero build step required - Static ES Modules"
+  },
+  "keywords": [
+    "indian-equities",
+    "nse",
+    "bse",
+    "nifty50",
+    "sensex",
+    "institutional-research",
+    "terminal"
+  ],
+  "author": "Executive CIO & Senior Forensic Analyst",
+  "license": "ISC"
+}

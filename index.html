@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>SOVEREIGN // 30 TERMINAL - INSTITUTIONAL RESEARCH & STOCKS CHARTS</title>
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+
+  <style>
+    @layer base {
+      html, body { margin: 0; padding: 0; height: 100%; }
+      body { overscroll-behavior: none; }
+    }
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #10141a; }
+    ::-webkit-scrollbar-thumb { background: #262a31; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #ffc081; }
+
+    @keyframes pulse-fast { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+    .animate-live-pulse { animation: pulse-fast 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+    .animate-fadeIn { animation: fadeIn 0.25s ease-out forwards; }
+  </style>
+
+  <!-- Tailwind CDN & Terminal Prime Theme -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "error-container": "#93000a",
+            "on-tertiary-fixed": "#001f24",
+            "on-tertiary": "#00363d",
+            "surface": "#10141a",
+            "surface-variant": "#31353c",
+            "primary-fixed": "#ffdcbe",
+            "surface-tint": "#ffb870",
+            "on-tertiary-fixed-variant": "#004f58",
+            "on-background": "#dfe2eb",
+            "tertiary-container": "#00c2d8",
+            "surface-container-low": "#181c22",
+            "surface-bright": "#353940",
+            "surface-container-high": "#262a31",
+            "background": "#10141a",
+            "tertiary-fixed-dim": "#00daf3",
+            "tertiary": "#00e0fa",
+            "on-primary-fixed": "#2c1600",
+            "surface-dim": "#10141a",
+            "primary-container": "#ff9800",
+            "error": "#ffb4ab",
+            "on-primary": "#4a2800",
+            "outline": "#a38d7a",
+            "on-secondary-container": "#00622e",
+            "on-error-container": "#ffdad6",
+            "secondary": "#7dffa2",
+            "tertiary-fixed": "#9cf0ff",
+            "on-secondary": "#003918",
+            "on-secondary-fixed": "#00210b",
+            "on-surface-variant": "#dbc2ad",
+            "outline-variant": "#554434",
+            "primary": "#ffc081",
+            "inverse-surface": "#dfe2eb",
+            "on-error": "#690005",
+            "surface-container-highest": "#31353c",
+            "surface-container-lowest": "#0a0e14",
+            "on-primary-container": "#653900",
+            "secondary-fixed": "#62ff96",
+            "secondary-fixed-dim": "#00e475",
+            "primary-fixed-dim": "#ffb870",
+            "secondary-container": "#05e777",
+            "on-secondary-fixed-variant": "#005226",
+            "on-primary-fixed-variant": "#693c00",
+            "inverse-on-surface": "#2d3137",
+            "on-tertiary-container": "#004b54",
+            "inverse-primary": "#8b5000",
+            "surface-container": "#1c2026"
+          },
+          fontFamily: {
+            "body-md": ["JetBrains Mono", "monospace"],
+            "body-sm": ["JetBrains Mono", "monospace"],
+            "code-cli": ["JetBrains Mono", "monospace"],
+            "headline-sm": ["IBM Plex Sans", "sans-serif"],
+            "body-lg": ["JetBrains Mono", "monospace"],
+            "label-caps": ["IBM Plex Sans", "sans-serif"],
+            "headline-lg": ["IBM Plex Sans", "sans-serif"],
+            "display": ["IBM Plex Sans", "sans-serif"],
+            "micro-badge": ["JetBrains Mono", "monospace"],
+            "metric-display": ["JetBrains Mono", "monospace"],
+            "headline-md": ["IBM Plex Sans", "sans-serif"],
+            "metric-table": ["JetBrains Mono", "monospace"]
+          },
+          spacing: {
+            "space-2xs": "2px",
+            "space-xs": "4px",
+            "space-sm": "8px",
+            "space-md": "12px",
+            "space-lg": "16px",
+            "space-xl": "24px",
+            "space-2xl": "32px"
+          }
+        }
+      }
+    };
+  </script>
+</head>
+
+<body class="bg-background font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container flex flex-col min-h-screen">
+
+  <!-- ========================================================================= -->
+  <!-- 1. TOP HEADER: Institutional Telemetry & Live Global Ticker Ribbon         -->
+  <!-- ========================================================================= -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest border-b border-surface-container-high h-14">
+    <div class="h-full w-full px-space-md flex items-center justify-between gap-space-sm">
+      
+      <!-- Brand & Mobile Toggle -->
+      <div class="flex items-center gap-space-sm shrink-0">
+        <button id="mobileSidebarToggle" class="lg:hidden p-space-2xs bg-surface-container border border-surface-container-high text-primary hover:text-on-surface">
+          <span class="material-symbols-outlined text-[20px]">menu</span>
+        </button>
+        <div class="flex items-center gap-space-xs">
+          <span class="bg-primary-container text-on-primary-container font-micro-badge text-micro-badge px-space-xs py-space-2xs uppercase tracking-widest font-bold">SV30</span>
+          <span class="font-headline-md text-headline-md tracking-wider text-primary uppercase font-bold">
+            SOVEREIGN 30 <span class="text-on-surface-variant font-normal hidden sm:inline">// BHARAT ALPHA</span>
+          </span>
+        </div>
+      </div>
+
+      <!-- Live Global & Domestic Indices Ticker -->
+      <div class="hidden xl:flex items-center overflow-x-auto whitespace-nowrap gap-space-sm px-space-sm border-l border-r border-surface-container-high py-space-2xs text-metric-table font-metric-table text-[11px]">
+        <div class="flex items-center gap-space-xs px-space-xs">
+          <span class="text-on-surface-variant font-label-caps text-label-caps">NIFTY</span>
+          <span class="text-on-surface font-bold">24,850.30</span>
+          <span class="text-secondary font-micro-badge text-micro-badge bg-surface-container px-space-2xs">+0.48%</span>
+        </div>
+        <span class="text-outline-variant">|</span>
+        <div class="flex items-center gap-space-xs px-space-xs">
+          <span class="text-on-surface-variant font-label-caps text-label-caps">SENSEX</span>
+          <span class="text-on-surface font-bold">81,320.10</span>
+          <span class="text-secondary font-micro-badge text-micro-badge bg-surface-container px-space-2xs">+0.52%</span>
+        </div>
+        <span class="text-outline-variant">|</span>
+        <div class="flex items-center gap-space-xs px-space-xs">
+          <span class="text-on-surface-variant font-label-caps text-label-caps">BRENT</span>
+          <span class="text-on-surface font-bold">$78.42</span>
+          <span class="text-error font-micro-badge text-micro-badge bg-surface-container px-space-2xs">-1.15%</span>
+        </div>
+        <span class="text-outline-variant">|</span>
+        <div class="flex items-center gap-space-xs px-space-xs">
+          <span class="text-on-surface-variant font-label-caps text-label-caps">USDINR</span>
+          <span class="text-on-surface font-bold">83.92</span>
+          <span class="text-secondary font-micro-badge text-micro-badge bg-surface-container px-space-2xs">+0.03%</span>
+        </div>
+        <span class="text-outline-variant">|</span>
+        <div class="flex items-center gap-space-xs px-space-xs">
+          <span class="text-on-surface-variant font-label-caps text-label-caps">GOLD</span>
+          <span class="text-on-surface font-bold">₹75,420</span>
+          <span class="text-secondary font-micro-badge text-micro-badge bg-surface-container px-space-2xs">+0.35%</span>
+        </div>
+        <span class="text-outline-variant">|</span>
+        <div class="flex items-center gap-space-xs px-space-xs">
+          <span class="text-on-surface-variant font-label-caps text-label-caps">US10Y</span>
+          <span class="text-on-surface font-bold">4.18%</span>
+          <span class="text-error font-micro-badge text-micro-badge bg-surface-container px-space-2xs">-2bps</span>
+        </div>
+      </div>
+
+      <!-- Desk Telemetry, Theme & Controls -->
+      <div class="flex items-center gap-space-sm shrink-0">
+        <div class="flex items-center gap-space-xs bg-surface-container-lowest px-space-sm py-space-2xs border border-surface-container-high">
+          <span class="w-space-sm h-space-sm rounded-full bg-secondary animate-live-pulse"></span>
+          <span class="font-micro-badge text-micro-badge text-secondary tracking-widest hidden sm:inline">12ms LATENCY</span>
+        </div>
+        <button class="px-space-xs py-space-2xs bg-surface-container border border-surface-container-high text-on-surface-variant hover:text-on-surface font-label-caps text-label-caps uppercase transition-colors flex items-center gap-space-xs" onclick="document.documentElement.classList.toggle('dark')" title="Toggle Obsidian Dark / Light">
+          <span class="material-symbols-outlined text-[14px]">contrast</span>
+          <span class="hidden md:inline">THEME</span>
+        </button>
+        <div class="hidden sm:flex items-center gap-space-xs bg-surface-container-high px-space-sm py-space-2xs font-label-caps text-label-caps text-on-surface">
+          DESK: MACRO/CIO
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Sidebar Backdrop -->
+  <div id="sidebarBackdrop" class="fixed inset-0 bg-black/60 z-30 hidden lg:hidden"></div>
+
+  <!-- ========================================================================= -->
+  <!-- 2. MAIN APPLICATION SHELL: SIDEBAR + MAIN CONTENT VIEWPORT                -->
+  <!-- ========================================================================= -->
+  <div class="flex-1 flex pt-14 pb-10 min-h-screen">
+    
+    <!-- ======================================================================= -->
+    <!-- LEFT SIDEBAR: ALL PHASES NAVIGATION & QUICK STOCK SEARCH                -->
+    <!-- ======================================================================= -->
+    <aside id="mainSidebar" class="fixed top-14 bottom-10 left-0 w-72 bg-surface-container-lowest border-r border-surface-container-high flex flex-col justify-between z-40 transform -translate-x-full lg:translate-x-0 transition-transform duration-200 ease-in-out">
+      
+      <div class="flex flex-col flex-1 overflow-y-auto">
+        <!-- Quick Stock Search Widget in Sidebar -->
+        <div class="p-space-sm border-b border-surface-container-high relative">
+          <div class="relative flex items-center bg-surface-container-low border border-surface-container-high px-space-sm py-space-xs">
+            <span class="material-symbols-outlined text-[15px] text-primary mr-space-xs">search</span>
+            <input 
+              type="text" 
+              id="sidebarStockSearch" 
+              placeholder="QUICK FIND STOCK (TICKER)..." 
+              class="bg-transparent text-[11px] font-mono text-on-surface placeholder:text-surface-variant focus:outline-none w-full uppercase"
+            />
+          </div>
+          <!-- Autocomplete Dropdown List -->
+          <div id="sidebarSearchResults" class="absolute left-space-sm right-space-sm top-full mt-1 bg-surface-container-lowest border border-primary shadow-2xl z-50 max-h-64 overflow-y-auto hidden">
+          </div>
+        </div>
+
+        <!-- Section 1: Core Analytics Workstations -->
+        <div class="py-space-xs">
+          <div class="px-space-sm py-space-2xs text-[10px] font-label-caps text-on-surface-variant tracking-wider uppercase font-bold text-outline">
+            CORE ANALYTICS DESKS
+          </div>
+
+          <!-- STOCKS & CHARTS DESK (Primary requested view) -->
+          <button class="sidebar-nav-btn w-full px-space-sm py-space-xs flex items-center justify-between border-l-2 border-primary bg-surface-container-lowest text-primary font-label-caps text-label-caps uppercase transition-colors" data-view="charts">
+            <span class="flex items-center gap-space-xs">
+              <span class="material-symbols-outlined text-[16px]">show_chart</span>
+              <span>STOCKS &amp; CHARTS DESK</span>
+            </span>
+            <span class="font-micro-badge text-micro-badge bg-secondary text-on-secondary px-space-xs py-space-2xs uppercase font-bold animate-pulse">LIVE</span>
+          </button>
+
+          <!-- MASTER PORTFOLIO SIMULATOR -->
+          <button class="sidebar-nav-btn w-full px-space-sm py-space-xs flex items-center justify-between border-l-2 border-transparent text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low font-label-caps text-label-caps uppercase transition-colors" data-view="portfolio">
+            <span class="flex items-center gap-space-xs">
+              <span class="material-symbols-outlined text-[16px]">account_balance</span>
+              <span>MASTER SIMULATOR</span>
+            </span>
+            <span class="font-micro-badge text-micro-badge text-primary bg-surface-container px-space-xs py-space-2xs">SV30</span>
+          </button>
+        </div>
+
+        <!-- Section 2: Research Phases (1 to 8) -->
+        <div class="py-space-xs border-t border-surface-container-high/60">
+          <div class="px-space-sm py-space-2xs text-[10px] font-label-caps text-on-surface-variant tracking-wider uppercase font-bold text-outline">
+            EQUITIES DOSSIER PHASES (1975–2030)
+          </div>
+
+          <!-- Phase 1 -->
+          <button class="sidebar-nav-btn w-full px-space-sm py-space-xs flex items-center justify-between border-l-2 border-transparent text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low font-label-caps text-label-caps uppercase transition-colors" data-view="phase1">
+            <span class="flex items-center gap-space-xs truncate">
+              <span class="material-symbols-outlined text-[16px] text-primary">history_edu</span>
+              <span class="truncate">PHASE 1: 50Y MARKET AUTOPSY</span>
+            </span>
+            <span class="font-mono text-[9px] text-outline">1975-26</span>
+          </button>
+
+          <!-- Phase 2 -->
+          <button class="sidebar-nav-btn w-full px-space-sm py-space-xs flex items-center justify-between border-l-2 border-transparent text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low font-label-caps text-label-caps uppercase transition-colors" data-view="phase2">
+            <span class="flex items-center gap-space-xs truncate">
+              <span class="material-symbols-outlined text-[16px] text-tertiary">water_drop</span>
+              <span class="truncate">PHASE 2: INSTITUTIONAL WHALES</span>
+            </span>
+            <span class="font-mono text-[9px] text-outline">LIC/MFS</span>
+          </button>
+
+          <!-- Phase 3 -->
+          <button class="sidebar-nav-btn w-full px-space-sm py-space-xs flex items-center justify-between border-l-2 border-transparent text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low font-label-caps text-label-caps uppercase transition-colors" data-view="phase3">
+            <span class="flex items-center gap-space-xs truncate">
+              <span class="material-symbols-outlined text-[16px] text-secondary">workspace_premium</span>
+              <span class="truncate">PHASE 3: TIER-1 LARGE-CAP TITANS</span>
+            </span>
+            <span class="font-mono text-[9px] text-outline">NIFTY50</span>
+          </button>
+
+          <!-- Phase 4 -->
+          <button class="sidebar-nav-btn w-full px-space-sm py-space-xs flex items-center justify-between border-l-2 border-transparent text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low font-label-caps text-label-caps uppercase transition-colors" data-view="phase4">
+            <span class="flex items-center gap-space-xs truncate">
+              <span class="material-symbols-outlined text-[16px] text-secondary">trending_up</span>
+              <span class="truncate">PHASE 4: TIER-2 MIDCAP COMPOUNDERS</span>
+            </span>
+            <span class="font-mono text-[9px] text-outline">MID150</span>
+          </button>
+
+          <!-- Phase 5 -->
+          <button class="sidebar-nav-btn w-full px-space-sm py-space-xs flex items-center justify-between border-l-2 border-transparent text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low font-label-caps text-label-caps uppercase transition-colors" data-view="phase5">
+            <span class="flex items-center gap-space-xs truncate">
+              <span class="material-symbols-outlined text-[16px] text-primary">diamond</span>
+              <span class="truncate">PHASE 5: TIER-3 SMALL &amp; SME</span>
+            </span>
+            <span class="font-mono text-[9px] text-outline">10X-50X</span>
+          </button>
+
+          <!-- Phase 6 -->
+          <button class="sidebar-nav-btn w-full px-space-sm py-space-xs flex items-center justify-between border-l-2 border-transparent text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low font-label-caps text-label-caps uppercase transition-colors" data-view="phase6">
+            <span class="flex items-center gap-space-xs truncate">
+              <span class="material-symbols-outlined text-[16px] text-tertiary">precision_manufacturing</span>
+              <span class="truncate">PHASE 6: MEGA-CAPEX SUPERCYCLES</span>
+            </span>
+            <span class="font-mono text-[9px] text-outline">DEF/EMS</span>
+          </button>
+
+          <!-- Phase 7 -->
+          <button class="sidebar-nav-btn w-full px-space-sm py-space-xs flex items-center justify-between border-l-2 border-transparent text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low font-label-caps text-label-caps uppercase transition-colors" data-view="phase7">
+            <span class="flex items-center gap-space-xs truncate">
+              <span class="material-symbols-outlined text-[16px] text-error">radar</span>
+              <span class="truncate">PHASE 7: F&amp;O DERIVATIVES RADAR</span>
+            </span>
+            <span class="font-mono text-[9px] text-outline">FII/PCR</span>
+          </button>
+
+          <!-- Phase 8 -->
+          <button class="sidebar-nav-btn w-full px-space-sm py-space-xs flex items-center justify-between border-l-2 border-transparent text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low font-label-caps text-label-caps uppercase transition-colors" data-view="phase8">
+            <span class="flex items-center gap-space-xs truncate">
+              <span class="material-symbols-outlined text-[16px] text-primary">flag</span>
+              <span class="truncate">PHASE 8: 2026-2030 ACTION PLAN</span>
+            </span>
+            <span class="font-mono text-[9px] text-outline">$7T GDP</span>
+          </button>
+        </div>
+
+        <!-- Section 3: Specialized Audit & Stress Suites -->
+        <div class="py-space-xs border-t border-surface-container-high/60">
+          <div class="px-space-sm py-space-2xs text-[10px] font-label-caps text-on-surface-variant tracking-wider uppercase font-bold text-outline">
+            STRESS &amp; AUDIT SUITES
+          </div>
+
+          <button class="sidebar-nav-btn w-full px-space-sm py-space-xs flex items-center justify-between border-l-2 border-transparent text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low font-label-caps text-label-caps uppercase transition-colors" data-view="crisis">
+            <span class="flex items-center gap-space-xs">
+              <span class="material-symbols-outlined text-[16px] text-error">warning</span>
+              <span>50Y CRISIS &amp; CRUDE MATRIX</span>
+            </span>
+            <span class="font-mono text-[9px] text-error">OIL $160</span>
+          </button>
+
+          <button class="sidebar-nav-btn w-full px-space-sm py-space-xs flex items-center justify-between border-l-2 border-transparent text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low font-label-caps text-label-caps uppercase transition-colors" data-view="forensic">
+            <span class="flex items-center gap-space-xs">
+              <span class="material-symbols-outlined text-[16px] text-tertiary">biotech</span>
+              <span>FORENSIC AUDIT LAB</span>
+            </span>
+            <span class="font-mono text-[9px] text-secondary">5-FLAGS</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Sidebar Status Strip -->
+      <div class="p-space-sm bg-surface-container-low border-t border-surface-container-high text-[10px] font-metric-table text-on-surface-variant flex justify-between items-center">
+        <span class="text-primary font-bold">DESK LOCK: ENGAGED</span>
+        <span>v4.89.12-INST</span>
+      </div>
+
+    </aside>
+
+    <!-- ======================================================================= -->
+    <!-- MAIN CONTENT VIEWPORT (Dynamically switched via TerminalMasterApp)      -->
+    <!-- ======================================================================= -->
+    <main class="flex-1 lg:ml-72 p-space-md bg-background overflow-x-hidden">
+      <div id="mainViewportContent" class="w-full">
+        <!-- Injected dynamically via js/terminalMaster.js -->
+      </div>
+    </main>
+
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- 3. BOTTOM CLI & HOTKEYS DOCK                                              -->
+  <!-- ========================================================================= -->
+  <footer class="fixed bottom-0 left-0 right-0 z-50 bg-surface-container-lowest border-t border-primary-container h-10">
+    <div class="h-full px-space-md flex items-center justify-between gap-space-md">
+      
+      <!-- CLI Prompt & Input -->
+      <div class="flex items-center gap-space-sm flex-1">
+        <div class="flex items-center gap-space-2xs text-secondary shrink-0">
+          <span class="w-space-xs h-space-xs rounded-full bg-secondary animate-live-pulse"></span>
+          <span class="font-code-cli text-code-cli text-primary text-[12px]">TERMINAL [PM-DESK-01] &gt;</span>
+        </div>
+        <input 
+          id="footerCliInput"
+          class="w-full bg-transparent font-code-cli text-code-cli text-on-surface placeholder:text-surface-variant focus:outline-none text-[12px]" 
+          placeholder="TYPE COMMAND (E.G. 'CHART RELIANCE', 'PHASE 3', 'BUY_SIM', 'EXPORT') OR PRESS ENTER..." 
+          type="text"
+        />
+      </div>
+
+      <!-- Quick Action Hotkeys -->
+      <div class="flex items-center gap-space-xs shrink-0">
+        <span class="text-on-surface-variant font-micro-badge text-micro-badge hidden md:inline">HOTKEYS:</span>
+        <button class="cli-hotkey-btn px-space-xs py-space-2xs bg-surface-container hover:bg-primary hover:text-on-primary text-on-surface-variant font-micro-badge text-micro-badge tracking-wider uppercase border border-surface-container-high transition-colors" data-cmd="charts">CHART</button>
+        <button class="cli-hotkey-btn px-space-xs py-space-2xs bg-surface-container hover:bg-primary hover:text-on-primary text-on-surface-variant font-micro-badge text-micro-badge tracking-wider uppercase border border-surface-container-high transition-colors" data-cmd="BUY_SIM">BUY_SIM</button>
+        <button class="cli-hotkey-btn px-space-xs py-space-2xs bg-surface-container hover:bg-primary hover:text-on-primary text-on-surface-variant font-micro-badge text-micro-badge tracking-wider uppercase border border-surface-container-high transition-colors" data-cmd="FORENSIC_RUN">FORENSIC</button>
+        <button class="cli-hotkey-btn px-space-xs py-space-2xs bg-surface-container hover:bg-primary hover:text-on-primary text-on-surface-variant font-micro-badge text-micro-badge tracking-wider uppercase border border-surface-container-high transition-colors" data-cmd="STRESS_TEST">STRESS</button>
+        <button class="cli-hotkey-btn px-space-xs py-space-2xs bg-surface-container hover:bg-primary hover:text-on-primary text-on-surface-variant font-micro-badge text-micro-badge tracking-wider uppercase border border-surface-container-high transition-colors" data-cmd="EXPORT_CSV">EXPORT</button>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Master Application Script -->
+  <script type="module">
+    import { TerminalMasterApp } from './js/terminalMaster.js';
+
+    document.addEventListener('DOMContentLoaded', () => {
+      window.terminalApp = new TerminalMasterApp();
+    });
+  </script>
+
+</body>
+</html>

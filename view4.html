@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>SOVEREIGN // 30 TERMINAL</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; } @keyframes pulse-fast { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } } .animate-live-pulse { animation: pulse-fast 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "error-container": "#93000a", "on-tertiary-fixed": "#001f24", "on-tertiary": "#00363d", "surface": "#10141a", "surface-variant": "#31353c", "primary-fixed": "#ffdcbe", "surface-tint": "#ffb870", "on-tertiary-fixed-variant": "#004f58", "on-background": "#dfe2eb", "tertiary-container": "#00c2d8", "surface-container-low": "#181c22", "surface-bright": "#353940", "surface-container-high": "#262a31", "background": "#10141a", "tertiary-fixed-dim": "#00daf3", "tertiary": "#00e0fa", "on-primary-fixed": "#2c1600", "surface-dim": "#10141a", "primary-container": "#ff9800", "error": "#ffb4ab", "on-primary": "#4a2800", "outline": "#a38d7a", "on-secondary-container": "#00622e", "on-error-container": "#ffdad6", "secondary": "#7dffa2", "tertiary-fixed": "#9cf0ff", "on-secondary": "#003918", "on-secondary-fixed": "#00210b", "on-surface-variant": "#dbc2ad", "outline-variant": "#554434", "primary": "#ffc081", "inverse-surface": "#dfe2eb", "on-error": "#690005", "surface-container-highest": "#31353c", "surface-container-lowest": "#0a0e14", "on-primary-container": "#653900", "secondary-fixed": "#62ff96", "secondary-fixed-dim": "#00e475", "primary-fixed-dim": "#ffb870", "secondary-container": "#05e777", "on-secondary-fixed-variant": "#005226", "on-primary-fixed-variant": "#693c00", "inverse-on-surface": "#2d3137", "on-tertiary-container": "#004b54", "inverse-primary": "#8b5000", "surface-container": "#1c2026" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-2xs": "2px", "space-xs": "4px", "space-sm": "8px", "status-strip-height": "22px", "space-xl": "24px", "space-lg": "16px", "pane-header-height": "28px", "space-2xl": "32px", "space-md": "12px", "cli-bar-height": "36px", "table-row-height": "20px" }, "fontFamily": { "body-md": ["JetBrains Mono"], "body-sm": ["JetBrains Mono"], "code-cli": ["JetBrains Mono"], "headline-sm": ["IBM Plex Sans"], "body-lg": ["JetBrains Mono"], "label-caps": ["IBM Plex Sans"], "headline-lg": ["IBM Plex Sans"], "display": ["IBM Plex Sans"], "micro-badge": ["JetBrains Mono"], "metric-display": ["JetBrains Mono"], "headline-md": ["IBM Plex Sans"], "metric-table": ["JetBrains Mono"] }, "fontSize": { "body-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "400" }], "body-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.01em", "fontWeight": "400" }], "code-cli": ["13px", { "lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "500" }], "headline-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "body-lg": ["13px", { "lineHeight": "18px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "label-caps": ["10px", { "lineHeight": "12px", "letterSpacing": "0.08em", "fontWeight": "700" }], "headline-lg": ["18px", { "lineHeight": "22px", "letterSpacing": "-0.005em", "fontWeight": "600" }], "display": ["24px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "micro-badge": ["9px", { "lineHeight": "10px", "letterSpacing": "0.05em", "fontWeight": "700" }], "metric-display": ["20px", { "lineHeight": "24px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-md": ["14px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "600" }], "metric-table": ["11px", { "lineHeight": "14px", "letterSpacing": "0em", "fontWeight": "500" }] } } } };</script></head><body class="bg-background font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest border-b border-surface-container-high"><div class="h-16 w-full px-space-md flex items-center justify-between gap-space-md border-b border-surface-container-high/60"><div class="flex items-center gap-space-md shrink-0"><div class="flex items-center gap-space-xs"><span class="bg-primary-container text-on-primary-container font-micro-badge text-micro-badge px-space-xs py-space-2xs uppercase tracking-widest">SV30</span><span class="font-headline-md text-headline-md tracking-wider text-primary uppercase">SOVEREIGN 30 <span class="text-on-surface-variant">// INSTITUTIONAL DESK</span></span></div></div><div class="hidden xl:flex items-center overflow-x-auto whitespace-nowrap gap-space-sm px-space-sm border-l border-r border-surface-container-high py-space-2xs text-metric-table font-metric-table"><div class="flex items-center gap-space-xs px-space-xs"><span class="text-on-surface-variant font-label-caps text-label-caps">SPX</span><span class="text-on-surface">5,842.10</span><span class="text-secondary font-micro-badge text-micro-badge bg-surface-container px-space-2xs">+0.64%</span></div><span class="text-outline-variant">|</span><div class="flex items-center gap-space-xs px-space-xs"><span class="text-on-surface-variant font-label-caps text-label-caps">NIFTY</span><span class="text-on-surface">24,850.30</span><span class="text-secondary font-micro-badge text-micro-badge bg-surface-container px-space-2xs">+0.48%</span></div><span class="text-outline-variant">|</span><div class="flex items-center gap-space-xs px-space-xs"><span class="text-on-surface-variant font-label-caps text-label-caps">BRENT</span><span class="text-on-surface">$78.42</span><span class="text-error font-micro-badge text-micro-badge bg-surface-container px-space-2xs">-1.15%</span></div><span class="text-outline-variant">|</span><div class="flex items-center gap-space-xs px-space-xs"><span class="text-on-surface-variant font-label-caps text-label-caps">US10Y</span><span class="text-on-surface">4.18%</span><span class="text-error font-micro-badge text-micro-badge bg-surface-container px-space-2xs">-2bps</span></div><span class="text-outline-variant">|</span><div class="flex items-center gap-space-xs px-space-xs"><span class="text-on-surface-variant font-label-caps text-label-caps">USDINR</span><span class="text-on-surface">83.92</span><span class="text-secondary font-micro-badge text-micro-badge bg-surface-container px-space-2xs">+0.03%</span></div><span class="text-outline-variant">|</span><div class="flex items-center gap-space-xs px-space-xs"><span class="text-on-surface-variant font-label-caps text-label-caps">XAU</span><span class="text-on-surface">$2,684.50</span><span class="text-secondary font-micro-badge text-micro-badge bg-surface-container px-space-2xs">+0.35%</span></div><span class="text-outline-variant">|</span><div class="flex items-center gap-space-xs px-space-xs"><span class="text-on-surface-variant font-label-caps text-label-caps">BTC</span><span class="text-on-surface">$67,240</span><span class="text-secondary font-micro-badge text-micro-badge bg-surface-container px-space-2xs">+2.18%</span></div></div><div class="flex items-center gap-space-md shrink-0"><div class="flex items-center gap-space-xs bg-surface-container-lowest px-space-sm py-space-2xs border border-surface-container-high"><span class="w-space-sm h-space-sm rounded-full bg-secondary animate-live-pulse"></span><span class="font-micro-badge text-micro-badge text-secondary tracking-widest">12ms LOW LATENCY</span></div><div class="hidden sm:flex items-center gap-space-2xs font-code-cli text-code-cli text-on-surface-variant"><span class="material-symbols-outlined text-[14px]">schedule</span><span>UTC 14:32:08</span></div><button class="px-space-xs py-space-2xs bg-surface-container border border-surface-container-high text-on-surface-variant hover:text-on-surface font-label-caps text-label-caps uppercase transition-colors flex items-center gap-space-xs" onclick="document.documentElement.classList.toggle('dark')" title="Toggle Obsidian Dark / Institutional White-Paper"><span class="material-symbols-outlined text-[14px]">contrast</span><span class="hidden lg:inline">THEME</span></button><div class="flex items-center gap-space-xs bg-surface-container-high px-space-sm py-space-2xs"><span class="font-label-caps text-label-caps text-on-surface uppercase">DESK: MACRO/PM</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div><div class="h-8 w-full px-space-md bg-surface-container-low flex items-center justify-between overflow-x-auto"><nav class="flex items-center h-full gap-space-xs shrink-0" data-active-classes="bg-surface-container-lowest text-primary border-b-2 border-primary"><a class="px-space-md h-full flex items-center text-on-surface-variant hover:text-on-surface font-label-caps text-label-caps uppercase tracking-wider border-r border-surface-container-high transition-colors" data-path="index.html" href="index.html">VIEW 1: MASTER SIMULATOR</a><a class="px-space-md h-full flex items-center text-on-surface-variant hover:text-on-surface font-label-caps text-label-caps uppercase tracking-wider border-r border-surface-container-high transition-colors" data-path="view2.html" href="view2.html">VIEW 2: 50Y CRISIS & OIL MATRIX</a><a class="px-space-md h-full flex items-center text-on-surface-variant hover:text-on-surface font-label-caps text-label-caps uppercase tracking-wider border-r border-surface-container-high transition-colors" data-path="view3.html" href="view3.html">VIEW 3: SUPER-INVESTORS (WHALES)</a><a aria-current="page" class="px-space-md h-full flex items-center font-label-caps uppercase tracking-wider transition-colors bg-surface-container-lowest text-primary border-b-2 border-primary" data-path="view4.html" href="view4.html">VIEW 4: F&O DERIVATIVES & TIMING RADAR</a><a class="px-space-md h-full flex items-center text-on-surface-variant hover:text-on-surface font-label-caps text-label-caps uppercase tracking-wider border-r border-surface-container-high transition-colors" data-path="view5.html" href="view5.html">VIEW 5: FORENSIC AUDIT LAB</a></nav><div class="hidden md:flex items-center gap-space-sm text-on-surface-variant font-micro-badge text-micro-badge tracking-wider"><span class="text-primary">STATION LOCK: ENGAGED</span><span>VER: 4.89.12-INST</span></div></div></header><main class="w-full pt-24 pb-14 bg-background min-h-screen"><div class="flex flex-col w-full">
+<div class="px-space-md py-space-sm bg-surface-container-low flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="w-space-xs h-space-xs bg-primary-container"></span>
+<span class="font-label-caps text-label-caps text-primary tracking-widest uppercase">MODULE // F&amp;O TIMING RADAR</span>
+</div>
+<span class="text-on-surface-variant font-micro-badge text-micro-badge">FEED: CME_GLOBEX + NSE_DERIVATIVES (ULTRA-L2)</span>
+<span class="text-secondary font-micro-badge text-micro-badge bg-surface-container px-space-xs py-space-2xs">IMPLIED VOL DIVERGENCE: ACTIVE</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<div class="flex items-center bg-surface-container px-space-xs py-space-2xs gap-space-xs">
+<span class="text-on-surface-variant font-label-caps text-label-caps">GAMMA EXPOSURE (GEX):</span>
+<span class="text-secondary font-code-cli text-code-cli font-bold">+$1.84B LONG GAMMA</span>
+</div>
+<div class="flex items-center bg-surface-container px-space-xs py-space-2xs gap-space-xs">
+<span class="text-on-surface-variant font-label-caps text-label-caps">NEXT PINNING CYCLE:</span>
+<span class="text-primary font-code-cli text-code-cli">T-3 DAYS (WEEKLY)</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-space-xs p-space-xs bg-surface-container-lowest">
+<div class="bg-surface-container p-space-sm flex flex-col justify-between relative group hover:bg-surface-container-high transition-colors">
+<div class="flex items-start justify-between">
+<div>
+<div class="text-on-surface-variant font-label-caps text-label-caps uppercase tracking-wider">FII Net Index Futures</div>
+<div class="text-primary font-metric-display text-metric-display tracking-tight mt-space-2xs">-48,250 <span class="text-body-sm font-body-sm text-on-surface-variant">CTRS</span></div>
+</div>
+<span class="material-symbols-outlined text-primary-container text-[20px]">swap_driving_apps</span>
+</div>
+<div class="my-space-xs">
+<div class="flex justify-between text-micro-badge font-micro-badge text-on-surface-variant mb-space-2xs">
+<span>-100K (BEAR)</span>
+<span class="text-primary-container font-bold">-48.2K</span>
+<span>+100K (BULL)</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-lowest relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 bg-primary-container" style="width: 26%;"></div>
+<div class="absolute left-[26%] top-0 bottom-0 w-1 bg-primary"></div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-2xs">
+<span class="bg-error-container text-on-error-container font-micro-badge text-micro-badge px-space-xs py-space-2xs tracking-widest uppercase">CONTRARIAN REVERSAL ZONE</span>
+<span class="text-on-surface-variant font-micro-badge text-micro-badge">SIGMA: -2.1σ</span>
+</div>
+<div class="absolute hidden group-hover:flex flex-col bottom-full left-0 mb-1 z-30 p-space-sm bg-surface-container-highest text-on-surface shadow-xl w-64 text-body-sm font-body-sm pointer-events-none">
+<span class="font-headline-sm text-headline-sm text-primary mb-space-2xs">INSTITUTIONAL METRIC TELEMETRY</span>
+<span>Foreign Institutional Investors hold extreme short positions. Historically, short overhang &gt;45k contracts in index futures triggers squeeze within 3-5 sessions on liquidity sweeps.</span>
+</div>
+</div>
+<div class="bg-surface-container p-space-sm flex flex-col justify-between hover:bg-surface-container-high transition-colors">
+<div class="flex items-start justify-between">
+<div>
+<div class="text-on-surface-variant font-label-caps text-label-caps uppercase tracking-wider">Put-Call Ratio (PCR)</div>
+<div class="text-secondary font-metric-display text-metric-display tracking-tight mt-space-2xs">0.78 <span class="text-body-sm font-body-sm text-on-surface-variant">OI RATIO</span></div>
+</div>
+<div class="relative w-10 h-10 flex items-center justify-center">
+<svg class="w-10 h-10 transform -rotate-90" viewbox="0 0 36 36">
+<path class="text-surface-container-lowest" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<path class="text-secondary" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="78, 100" stroke-linecap="butt" stroke-width="3.5"></path>
+</svg>
+<span class="absolute text-[9px] font-micro-badge text-on-surface">78%</span>
+</div>
+</div>
+<div class="my-space-xs">
+<div class="flex justify-between text-micro-badge font-micro-badge text-on-surface-variant mb-space-2xs">
+<span>0.5 (FLOOR)</span>
+<span class="text-on-surface">1.0 (PAR)</span>
+<span>1.6 (CEIL)</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-lowest relative">
+<div class="absolute left-0 top-0 bottom-0 bg-secondary" style="width: 25.4%;"></div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-2xs">
+<span class="bg-surface-container-highest text-secondary font-micro-badge text-micro-badge px-space-xs py-space-2xs uppercase">EXTREME OVERSOLD / HEDGE SPIKE</span>
+<span class="text-on-surface-variant font-micro-badge text-micro-badge">VOL WEIGHTED</span>
+</div>
+</div>
+<div class="bg-surface-container p-space-sm flex flex-col justify-between hover:bg-surface-container-high transition-colors">
+<div class="flex items-start justify-between">
+<div>
+<div class="text-on-surface-variant font-label-caps text-label-caps uppercase tracking-wider">India VIX // CBOE VIX</div>
+<div class="text-on-surface font-metric-display text-metric-display tracking-tight mt-space-2xs">13.42 <span class="text-on-surface-variant text-body-md font-body-md">/ 14.85</span></div>
+</div>
+<span class="material-symbols-outlined text-secondary text-[20px]">show_chart</span>
+</div>
+<div class="my-space-xs">
+<div class="flex justify-between items-center text-micro-badge font-micro-badge">
+<span class="text-secondary">-4.2% DAILY CRUSH</span>
+<span class="text-on-surface-variant">TERM STRUCT: CONTANGO</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-lowest mt-space-2xs flex">
+<div class="bg-secondary h-full" style="width: 32%;"></div>
+<div class="bg-surface-bright h-full" style="width: 68%;"></div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-2xs">
+<span class="bg-secondary-container text-on-secondary-container font-micro-badge text-micro-badge px-space-xs py-space-2xs font-bold uppercase">VOLATILITY COMPRESSED</span>
+<span class="text-secondary font-micro-badge text-micro-badge">PREMIUM SELLING REGIME</span>
+</div>
+</div>
+<div class="bg-surface-container p-space-sm flex flex-col justify-between hover:bg-surface-container-high transition-colors">
+<div class="flex items-start justify-between">
+<div>
+<div class="text-on-surface-variant font-label-caps text-label-caps uppercase tracking-wider">Max Pain Level (Pin Gravity)</div>
+<div class="text-primary font-metric-display text-metric-display tracking-tight mt-space-2xs">24,800 <span class="text-on-surface-variant text-body-md font-body-md">/ SPX 5,825</span></div>
+</div>
+<span class="material-symbols-outlined text-primary text-[20px]">adjust</span>
+</div>
+<div class="my-space-xs">
+<div class="flex justify-between text-micro-badge font-micro-badge text-on-surface-variant mb-space-2xs">
+<span>CURRENT: 24,850.3</span>
+<span class="text-primary">DELTA: -50.3 PTS</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-lowest relative">
+<div class="absolute left-1/2 -ml-0.5 top-0 bottom-0 w-1 bg-primary"></div>
+<div class="absolute left-[54%] top-0 bottom-0 w-1.5 bg-secondary"></div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-2xs">
+<span class="bg-surface-container-highest text-primary font-micro-badge text-micro-badge px-space-xs py-space-2xs uppercase">EXPIRY PINNING GRAVITY: HIGH</span>
+<span class="text-on-surface-variant font-micro-badge text-micro-badge">DTE: 1.5 DAYS</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xs p-space-xs bg-surface-container-lowest">
+<div class="lg:col-span-7 flex flex-col gap-space-xs">
+<div class="bg-surface-container p-space-md">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">tune</span>
+<span class="font-headline-sm text-headline-sm text-on-surface uppercase tracking-wider">FII / DII Institutional Futures Positioning Simulator</span>
+</div>
+<span class="font-micro-badge text-micro-badge text-on-surface-variant">REAL-TIME CLEARING HOUSE CONSOLIDATION</span>
+</div>
+<div class="bg-surface-container-low p-space-sm mb-space-sm">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="text-body-sm font-body-sm text-on-surface-variant uppercase">Interactive Squeeze &amp; Sentiment Stress Gauge:</span>
+<span class="font-metric-display text-metric-display text-primary" id="slider-val">-48,250 Contracts</span>
+</div>
+<input class="w-full h-2 bg-surface-container-lowest appearance-none cursor-pointer accent-primary-container" id="fii-slider" max="100000" min="-100000" step="2500" type="range" value="-48250"/>
+<div class="grid grid-cols-3 text-center mt-space-xs text-micro-badge font-micro-badge">
+<div class="p-space-2xs bg-surface-container-lowest text-secondary text-left font-bold uppercase">&lt; -60K: Long Squeeze / Reversal Alert</div>
+<div class="p-space-2xs bg-surface-container-lowest text-on-surface-variant font-bold uppercase">-20K to +20K: Balanced Range-bound</div>
+<div class="p-space-2xs bg-surface-container-lowest text-primary text-right font-bold uppercase">&gt; +60K: Top Exhaustion / Put Buying</div>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-space-xs text-body-sm font-body-sm">
+<div class="bg-surface-container-lowest p-space-xs">
+<div class="text-on-surface-variant font-label-caps text-label-caps">HISTORICAL OCCURRENCE</div>
+<div class="text-on-surface font-code-cli text-code-cli mt-space-2xs">3.8% of past 1,200 sessions</div>
+<div class="text-secondary font-micro-badge text-micro-badge mt-space-2xs">+84% win-rate on 5D call setups</div>
+</div>
+<div class="bg-surface-container-lowest p-space-xs">
+<div class="text-on-surface-variant font-label-caps text-label-caps">DOMINANT COUNTERPARTY</div>
+<div class="text-on-surface font-code-cli text-code-cli mt-space-2xs">DII Proprietary Longs (+39.1K)</div>
+<div class="text-on-surface-variant font-micro-badge text-micro-badge mt-space-2xs">Absorption rate: $420M/day</div>
+</div>
+<div class="bg-surface-container-lowest p-space-xs">
+<div class="text-on-surface-variant font-label-caps text-label-caps">TRIGGER VELOCITY</div>
+<div class="text-secondary font-code-cli text-code-cli mt-space-2xs" id="trigger-state">ACTIVE: ACCUMULATION</div>
+<div class="text-primary font-micro-badge text-micro-badge mt-space-2xs">Mean-reversion expected &lt; 72h</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container p-space-md flex-1">
+<div class="flex flex-wrap items-center justify-between gap-space-xs mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[18px]">waterfall_chart</span>
+<span class="font-headline-sm text-headline-sm text-on-surface uppercase tracking-wider">Options Open Interest (OI) &amp; Strike Distribution</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="bg-surface-container-highest text-secondary font-micro-badge text-micro-badge px-space-xs py-space-2xs font-bold">BULL CALL SPREAD RECOMMENDED</span>
+<span class="bg-surface-container-highest text-primary font-micro-badge text-micro-badge px-space-xs py-space-2xs font-bold">VEGA CRUSH IMPENDING</span>
+<span class="bg-surface-container-highest text-on-surface-variant font-micro-badge text-micro-badge px-space-xs py-space-2xs">GAMMA SQUEEZE: LOW PROB</span>
+</div>
+</div>
+<div class="grid grid-cols-12 text-label-caps font-label-caps text-on-surface-variant py-space-2xs px-space-xs bg-surface-container-lowest uppercase mb-space-2xs">
+<div class="col-span-4 text-left">CALL OI (BUILD-UP)</div>
+<div class="col-span-4 text-center">STRIKE // ATM BIAS</div>
+<div class="col-span-4 text-right">PUT OI (SUPPORT BASE)</div>
+</div>
+<div class="flex flex-col gap-space-2xs text-metric-table font-metric-table">
+<div class="grid grid-cols-12 items-center bg-surface-container-low px-space-xs py-space-2xs hover:bg-surface-container-high transition-colors">
+<div class="col-span-4 flex items-center justify-end gap-space-xs">
+<span class="text-error">12.4M</span>
+<div class="w-28 h-2 bg-surface-container-lowest flex justify-end">
+<div class="bg-error h-full" style="width: 85%;"></div>
+</div>
+</div>
+<div class="col-span-4 text-center font-bold text-on-surface">25,200 CE <span class="text-on-surface-variant font-micro-badge text-micro-badge">+1.4%</span></div>
+<div class="col-span-4 flex items-center justify-start gap-space-xs">
+<div class="w-28 h-2 bg-surface-container-lowest">
+<div class="bg-secondary h-full" style="width: 15%;"></div>
+</div>
+<span class="text-secondary">2.1M</span>
+</div>
+</div>
+<div class="grid grid-cols-12 items-center bg-surface-container-low px-space-xs py-space-2xs hover:bg-surface-container-high transition-colors">
+<div class="col-span-4 flex items-center justify-end gap-space-xs">
+<span class="text-error">18.9M</span>
+<div class="w-28 h-2 bg-surface-container-lowest flex justify-end">
+<div class="bg-error h-full" style="width: 95%;"></div>
+</div>
+</div>
+<div class="col-span-4 text-center font-bold text-error">25,000 CE [MAJOR RESISTANCE]</div>
+<div class="col-span-4 flex items-center justify-start gap-space-xs">
+<div class="w-28 h-2 bg-surface-container-lowest">
+<div class="bg-secondary h-full" style="width: 24%;"></div>
+</div>
+<span class="text-secondary">4.8M</span>
+</div>
+</div>
+<div class="grid grid-cols-12 items-center bg-surface-container-low px-space-xs py-space-2xs hover:bg-surface-container-high transition-colors">
+<div class="col-span-4 flex items-center justify-end gap-space-xs">
+<span class="text-error">7.1M</span>
+<div class="w-28 h-2 bg-surface-container-lowest flex justify-end">
+<div class="bg-error h-full" style="width: 45%;"></div>
+</div>
+</div>
+<div class="col-span-4 text-center font-bold text-on-surface">24,900 CE / PE</div>
+<div class="col-span-4 flex items-center justify-start gap-space-xs">
+<div class="w-28 h-2 bg-surface-container-lowest">
+<div class="bg-secondary h-full" style="width: 48%;"></div>
+</div>
+<span class="text-secondary">7.5M</span>
+</div>
+</div>
+<div class="grid grid-cols-12 items-center bg-surface-container-highest px-space-xs py-space-2xs">
+<div class="col-span-4 flex items-center justify-end gap-space-xs">
+<span class="text-primary font-bold">14.2M</span>
+<div class="w-28 h-2 bg-surface-container-lowest flex justify-end">
+<div class="bg-primary-container h-full" style="width: 70%;"></div>
+</div>
+</div>
+<div class="col-span-4 text-center font-bold text-primary flex items-center justify-center gap-space-xs">
+<span class="material-symbols-outlined text-[14px]">my_location</span>
+<span>24,800 [MAX PAIN PIN]</span>
+</div>
+<div class="col-span-4 flex items-center justify-start gap-space-xs">
+<div class="w-28 h-2 bg-surface-container-lowest">
+<div class="bg-secondary h-full" style="width: 82%;"></div>
+</div>
+<span class="text-secondary font-bold">16.3M</span>
+</div>
+</div>
+<div class="grid grid-cols-12 items-center bg-surface-container-low px-space-xs py-space-2xs hover:bg-surface-container-high transition-colors">
+<div class="col-span-4 flex items-center justify-end gap-space-xs">
+<span class="text-error">3.4M</span>
+<div class="w-28 h-2 bg-surface-container-lowest flex justify-end">
+<div class="bg-error h-full" style="width: 22%;"></div>
+</div>
+</div>
+<div class="col-span-4 text-center font-bold text-on-surface">24,700 PE</div>
+<div class="col-span-4 flex items-center justify-start gap-space-xs">
+<div class="w-28 h-2 bg-surface-container-lowest">
+<div class="bg-secondary h-full" style="width: 65%;"></div>
+</div>
+<span class="text-secondary">10.2M</span>
+</div>
+</div>
+<div class="grid grid-cols-12 items-center bg-surface-container-low px-space-xs py-space-2xs hover:bg-surface-container-high transition-colors">
+<div class="col-span-4 flex items-center justify-end gap-space-xs">
+<span class="text-error">1.8M</span>
+<div class="w-28 h-2 bg-surface-container-lowest flex justify-end">
+<div class="bg-error h-full" style="width: 12%;"></div>
+</div>
+</div>
+<div class="col-span-4 text-center font-bold text-secondary">24,500 PE [MACRO STRADDLE FLOOR]</div>
+<div class="col-span-4 flex items-center justify-start gap-space-xs">
+<div class="w-28 h-2 bg-surface-container-lowest">
+<div class="bg-secondary h-full" style="width: 98%;"></div>
+</div>
+<span class="text-secondary">19.5M</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between text-micro-badge font-micro-badge text-on-surface-variant mt-space-sm pt-space-xs bg-surface-container-lowest px-space-sm">
+<span>VOLUME WEIGHTED PUT/CALL RATIO AT ATM: <strong class="text-on-surface">0.82</strong></span>
+<span>NET DELTA SHIFT: <strong class="text-secondary">+148,920 DELTAS/HOUR</strong></span>
+<span>IV PERCENTILE: <strong class="text-primary">18.4% (CHEAP VOL)</strong></span>
+</div>
+</div>
+</div>
+<div class="lg:col-span-5 flex flex-col gap-space-xs">
+<div class="bg-surface-container p-space-md flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">calculate</span>
+<span class="font-headline-sm text-headline-sm text-on-surface uppercase tracking-wider">Hedging Cost Breakdown Calculator</span>
+</div>
+<span class="bg-primary-container text-on-primary-container font-micro-badge text-micro-badge px-space-xs py-space-2xs">INST-ENGINE v4.2</span>
+</div>
+<div class="grid grid-cols-1 gap-space-sm bg-surface-container-low p-space-sm mb-space-md">
+<div>
+<div class="flex justify-between text-body-sm font-body-sm mb-space-2xs">
+<span class="text-on-surface-variant font-label-caps text-label-caps uppercase">PORTFOLIO EXPOSURE (AUM)</span>
+<span class="text-on-surface font-code-cli text-code-cli font-bold" id="aum-display">$100,000,000</span>
+</div>
+<input class="w-full h-1.5 bg-surface-container-lowest appearance-none cursor-pointer accent-primary" id="aum-slider" max="500" min="10" step="10" type="range" value="100"/>
+</div>
+<div class="grid grid-cols-2 gap-space-xs">
+<div>
+<label class="text-on-surface-variant font-label-caps text-label-caps uppercase block mb-space-2xs">BUFFER TARGET</label>
+<select class="w-full bg-surface-container-lowest text-on-surface font-code-cli text-code-cli p-space-xs focus:outline-none" id="buffer-select">
+<option value="0.05">-5% Tight Buffer (Costly)</option>
+<option selected="" value="0.10">-10% Standard Institutional</option>
+<option value="0.15">-15% Tail Risk Catastrophe</option>
+</select>
+</div>
+<div>
+<label class="text-on-surface-variant font-label-caps text-label-caps uppercase block mb-space-2xs">EXPIRY HORIZON</label>
+<div class="grid grid-cols-2 gap-space-2xs">
+<button class="bg-primary-container text-on-primary-container font-label-caps text-label-caps py-space-xs uppercase text-center font-bold" id="horizon-30" onclick="setHorizon(30)">30 DAYS</button>
+<button class="bg-surface-container-highest text-on-surface-variant font-label-caps text-label-caps py-space-xs uppercase text-center" id="horizon-90" onclick="setHorizon(90)">90 DAYS</button>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-space-xs text-body-sm font-body-sm">
+<div class="p-space-sm bg-surface-container-low flex items-center justify-between">
+<div>
+<div class="text-on-surface-variant font-label-caps text-label-caps uppercase">1. OTM PUT OPTION STRIKE COST</div>
+<div class="text-micro-badge font-micro-badge text-on-surface-variant">Pure Downside Put Floor (Delta -0.22)</div>
+</div>
+<div class="text-right">
+<div class="text-error font-metric-display text-metric-display" id="otm-cost">$1,240,000</div>
+<div class="text-micro-badge font-micro-badge text-error" id="otm-pct">1.24% of AUM</div>
+</div>
+</div>
+<div class="p-space-sm bg-surface-container-low flex items-center justify-between">
+<div>
+<div class="text-secondary font-label-caps text-label-caps uppercase font-bold">2. COLLAR STRATEGY (RECOMMENDED)</div>
+<div class="text-micro-badge font-micro-badge text-on-surface-variant">Funding Put via Selling +7% OTM Call</div>
+</div>
+<div class="text-right">
+<div class="text-secondary font-metric-display text-metric-display" id="collar-cost">$180,000</div>
+<div class="text-micro-badge font-micro-badge text-secondary" id="collar-pct">0.18% of AUM</div>
+</div>
+</div>
+<div class="p-space-sm bg-surface-container-low flex items-center justify-between">
+<div>
+<div class="text-on-surface-variant font-label-caps text-label-caps uppercase">3. DYNAMIC DELTA HEDGING RUN-RATE</div>
+<div class="text-micro-badge font-micro-badge text-on-surface-variant">Rebalancing via Futures (Est. Slippage + Margin)</div>
+</div>
+<div class="text-right">
+<div class="text-on-surface font-metric-display text-metric-display" id="delta-cost">$420,000 <span class="text-body-sm font-body-sm text-on-surface-variant">/mo</span></div>
+<div class="text-micro-badge font-micro-badge text-on-surface-variant">0.42% Annualized Friction</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-space-md p-space-sm bg-surface-container-highest flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[22px]">shield</span>
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface uppercase">Net Beta Post-Hedge</div>
+<div class="text-micro-badge font-micro-badge text-on-surface-variant">Systemic market vulnerability compression</div>
+</div>
+</div>
+<div class="text-right">
+<div class="font-metric-display text-metric-display text-secondary">0.34 <span class="text-on-surface-variant line-through text-body-sm font-body-sm">0.94</span></div>
+<span class="bg-secondary-container text-on-secondary-container font-micro-badge text-micro-badge px-space-xs py-space-2xs uppercase font-bold">BETA CRUSHED BY 63.8%</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-space-xs mt-space-sm">
+<button class="w-full bg-primary-container hover:bg-primary text-on-primary-container font-code-cli text-code-cli py-space-xs uppercase font-bold transition-colors">
+            DEPLOY COLLAR BASKET
+          </button>
+<button class="w-full bg-surface-container-high hover:bg-surface-bright text-on-surface font-code-cli text-code-cli py-space-xs uppercase transition-colors">
+            EXPORT GREEKS XLS
+          </button>
+</div>
+</div>
+<div class="bg-surface-container p-space-sm">
+<div class="flex items-center justify-between text-label-caps font-label-caps text-on-surface-variant uppercase mb-space-xs">
+<span>REAL-TIME OPTIONS GREEKS OVERVIEW</span>
+<span class="text-secondary">AGGREGATE PORTFOLIO</span>
+</div>
+<div class="grid grid-cols-4 gap-space-2xs text-center text-metric-table font-metric-table">
+<div class="bg-surface-container-lowest p-space-2xs">
+<div class="text-on-surface-variant text-[9px]">DELTA (Δ)</div>
+<div class="text-on-surface font-bold mt-0.5">+0.34</div>
+</div>
+<div class="bg-surface-container-lowest p-space-2xs">
+<div class="text-on-surface-variant text-[9px]">GAMMA (Γ)</div>
+<div class="text-secondary font-bold mt-0.5">+0.012</div>
+</div>
+<div class="bg-surface-container-lowest p-space-2xs">
+<div class="text-on-surface-variant text-[9px]">THETA (Θ)</div>
+<div class="text-error font-bold mt-0.5">-$4,210/d</div>
+</div>
+<div class="bg-surface-container-lowest p-space-2xs">
+<div class="text-on-surface-variant text-[9px]">VEGA (ν)</div>
+<div class="text-primary font-bold mt-0.5">+$12,800/1%</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+    let currentHorizon = 30;
+
+    function formatUSD(val) {
+      return '$' + Math.round(val).toLocaleString('en-US');
+    }
+
+    function calculateHedging() {
+      const aumM = parseFloat(document.getElementById('aum-slider').value);
+      const aum = aumM * 1000000;
+      const buffer = parseFloat(document.getElementById('buffer-select').value);
+      const horizonFactor = currentHorizon === 90 ? 1.9 : 1.0;
+
+      document.getElementById('aum-display').innerText = formatUSD(aum);
+
+      const bufferMultiplier = buffer === 0.05 ? 1.6 : (buffer === 0.10 ? 1.0 : 0.65);
+      const baseOtmRate = 0.0124 * bufferMultiplier * horizonFactor;
+      const otmCost = aum * baseOtmRate;
+      const otmPct = (baseOtmRate * 100).toFixed(2);
+
+      const collarRate = 0.0018 * bufferMultiplier * (currentHorizon === 90 ? 1.4 : 1.0);
+      const collarCost = aum * collarRate;
+      const collarPct = (collarRate * 100).toFixed(2);
+
+      const deltaRate = 0.0042 * (currentHorizon === 90 ? 0.85 : 1.0);
+      const deltaCost = aum * deltaRate;
+
+      document.getElementById('otm-cost').innerText = formatUSD(otmCost);
+      document.getElementById('otm-pct').innerText = otmPct + '% of AUM';
+      document.getElementById('collar-cost').innerText = formatUSD(collarCost);
+      document.getElementById('collar-pct').innerText = collarPct + '% of AUM';
+      document.getElementById('delta-cost').innerHTML = formatUSD(deltaCost) + ' <span class="text-body-sm font-body-sm text-on-surface-variant">/mo</span>';
+    }
+
+    function setHorizon(days) {
+      currentHorizon = days;
+      const btn30 = document.getElementById('horizon-30');
+      const btn90 = document.getElementById('horizon-90');
+      if (days === 30) {
+        btn30.className = 'bg-primary-container text-on-primary-container font-label-caps text-label-caps py-space-xs uppercase text-center font-bold';
+        btn90.className = 'bg-surface-container-highest text-on-surface-variant font-label-caps text-label-caps py-space-xs uppercase text-center';
+      } else {
+        btn90.className = 'bg-primary-container text-on-primary-container font-label-caps text-label-caps py-space-xs uppercase text-center font-bold';
+        btn30.className = 'bg-surface-container-highest text-on-surface-variant font-label-caps text-label-caps py-space-xs uppercase text-center';
+      }
+      calculateHedging();
+    }
+
+    document.getElementById('aum-slider').addEventListener('input', calculateHedging);
+    document.getElementById('buffer-select').addEventListener('change', calculateHedging);
+
+    const fiiSlider = document.getElementById('fii-slider');
+    const sliderVal = document.getElementById('slider-val');
+    const triggerState = document.getElementById('trigger-state');
+
+    fiiSlider.addEventListener('input', function(e) {
+      const val = parseInt(e.target.value);
+      sliderVal.innerText = (val > 0 ? '+' : '') + val.toLocaleString('en-US') + ' Contracts';
+      if (val <= -60000) {
+        sliderVal.className = 'font-metric-display text-metric-display text-secondary';
+        triggerState.innerText = 'LONG SQUEEZE ALERT (HIGH CONFIDENCE)';
+        triggerState.className = 'text-secondary font-code-cli text-code-cli mt-space-2xs font-bold';
+      } else if (val >= 60000) {
+        sliderVal.className = 'font-metric-display text-metric-display text-error';
+        triggerState.innerText = 'TOP EXHAUSTION / PUT BUY ZONE';
+        triggerState.className = 'text-error font-code-cli text-code-cli mt-space-2xs font-bold';
+      } else if (val >= -20000 && val <= 20000) {
+        sliderVal.className = 'font-metric-display text-metric-display text-on-surface';
+        triggerState.innerText = 'BALANCED RANGE-BOUND (GRID)';
+        triggerState.className = 'text-on-surface-variant font-code-cli text-code-cli mt-space-2xs';
+      } else {
+        sliderVal.className = 'font-metric-display text-metric-display text-primary';
+        triggerState.innerText = 'ACTIVE: ACCUMULATION / SQUEEZE';
+        triggerState.className = 'text-primary font-code-cli text-code-cli mt-space-2xs';
+      }
+    });
+
+    calculateHedging();
+  </script>
+</div></main><footer class="fixed bottom-0 left-0 right-0 z-40 bg-surface-container-lowest border-t border-primary-container"><div class="h-9 px-space-md flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-sm flex-1"><div class="flex items-center gap-space-2xs text-secondary shrink-0"><span class="w-space-xs h-space-xs rounded-full bg-secondary animate-live-pulse"></span><span class="font-code-cli text-code-cli text-primary">TERMINAL READY [PM-DESK-01] &gt;</span></div><input class="w-full bg-transparent font-code-cli text-code-cli text-on-surface placeholder:text-surface-variant focus:outline-none" placeholder="ENTER COMMAND OR MNEMONIC (E.G. 'BUY_SIM --ASSET=SPX' OR PRESS '~')" type="text"/></div><div class="flex items-center gap-space-xs shrink-0"><span class="text-on-surface-variant font-micro-badge text-micro-badge hidden sm:inline">HOTKEYS:</span><button class="px-space-xs py-space-2xs bg-surface-container hover:bg-primary-container hover:text-on-primary-container text-on-surface-variant font-micro-badge text-micro-badge tracking-wider uppercase border border-surface-container-high transition-colors">BUY_SIM</button><button class="px-space-xs py-space-2xs bg-surface-container hover:bg-primary-container hover:text-on-primary-container text-on-surface-variant font-micro-badge text-micro-badge tracking-wider uppercase border border-surface-container-high transition-colors">HEDGE_CALC</button><button class="px-space-xs py-space-2xs bg-surface-container hover:bg-primary-container hover:text-on-primary-container text-on-surface-variant font-micro-badge text-micro-badge tracking-wider uppercase border border-surface-container-high transition-colors">EXPORT_CSV</button><button class="px-space-xs py-space-2xs bg-surface-container hover:bg-primary-container hover:text-on-primary-container text-on-surface-variant font-micro-badge text-micro-badge tracking-wider uppercase border border-surface-container-high transition-colors">FORENSIC_RUN</button><button class="px-space-xs py-space-2xs bg-surface-container hover:bg-primary-container hover:text-on-primary-container text-on-surface-variant font-micro-badge text-micro-badge tracking-wider uppercase border border-surface-container-high transition-colors">STRESS_TEST</button><button class="flex items-center text-on-surface-variant hover:text-primary pl-space-xs border-l border-surface-container-high"><span class="material-symbols-outlined text-[16px]">terminal</span></button></div></div></footer>
+<script>
+  // Terminal CLI Navigation & Hotkeys Router
+  (function() {
+    document.addEventListener('DOMContentLoaded', () => {
+      const cliInput = document.querySelector('footer input[type="text"]');
+      if (cliInput) {
+        cliInput.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter') {
+            const cmd = cliInput.value.trim().toUpperCase();
+            if (cmd === 'NEXT' || cmd === 'CONTINUE') {
+              const currentPath = window.location.pathname;
+              if (currentPath.includes('view2')) window.location.href = 'view3.html';
+              else if (currentPath.includes('view3')) window.location.href = 'view4.html';
+              else if (currentPath.includes('view4')) window.location.href = 'view5.html';
+              else if (currentPath.includes('view5')) window.location.href = 'index.html';
+              else window.location.href = 'view2.html';
+            } else if (cmd === 'VIEW 1' || cmd === 'SIM' || cmd === 'MASTER') {
+              window.location.href = 'index.html';
+            } else if (cmd === 'VIEW 2' || cmd === 'CRISIS' || cmd === 'OIL') {
+              window.location.href = 'view2.html';
+            } else if (cmd === 'VIEW 3' || cmd === 'WHALES' || cmd === 'WHALE') {
+              window.location.href = 'view3.html';
+            } else if (cmd === 'VIEW 4' || cmd === 'DERIVATIVES' || cmd === 'RADAR' || cmd === 'FO') {
+              window.location.href = 'view4.html';
+            } else if (cmd === 'VIEW 5' || cmd === 'FORENSIC' || cmd === 'AUDIT') {
+              window.location.href = 'view5.html';
+            } else if (cmd === 'BUY_SIM') {
+              if (typeof setCapital === 'function') setCapital(100);
+              else window.location.href = 'index.html';
+            } else if (cmd === 'HEDGE_CALC') {
+              window.location.href = 'view4.html';
+            } else if (cmd === 'FORENSIC_RUN') {
+              window.location.href = 'view5.html';
+            } else if (cmd === 'STRESS_TEST') {
+              window.location.href = 'view2.html';
+            } else if (cmd === 'EXPORT_CSV' || cmd === 'EXPORT') {
+              if (typeof exportAllocationsCSV === 'function') exportAllocationsCSV();
+              else alert('Navigating to Master Simulator for CSV Export');
+            } else {
+              alert("COMMAND EXECUTED: " + cmd + "\nAvailable Commands: NEXT, VIEW 1, VIEW 2, VIEW 3, VIEW 4, VIEW 5, BUY_SIM, HEDGE_CALC, FORENSIC_RUN, STRESS_TEST, EXPORT_CSV");
+            }
+          }
+        });
+      }
+
+      // Hotkey buttons in footer
+      const hotkeys = document.querySelectorAll('footer button');
+      hotkeys.forEach(btn => {
+        const txt = btn.textContent.trim();
+        if (txt === 'BUY_SIM') {
+          btn.onclick = () => { window.location.href = 'index.html'; };
+        } else if (txt === 'HEDGE_CALC') {
+          btn.onclick = () => { window.location.href = 'view4.html'; };
+        } else if (txt === 'FORENSIC_RUN') {
+          btn.onclick = () => { window.location.href = 'view5.html'; };
+        } else if (txt === 'STRESS_TEST') {
+          btn.onclick = () => { window.location.href = 'view2.html'; };
+        } else if (txt === 'EXPORT_CSV') {
+          btn.onclick = () => {
+            if (typeof exportAllocationsCSV === 'function') exportAllocationsCSV();
+            else window.location.href = 'index.html';
+          };
+        }
+      });
+    });
+  })();
+</script>
+</body></html>
