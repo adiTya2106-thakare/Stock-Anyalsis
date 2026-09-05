@@ -11,6 +11,15 @@
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 
+  <!-- Clerk Authentication SDK -->
+  <script
+    async
+    crossorigin="anonymous"
+    data-clerk-publishable-key="pk_test_Y2l2aWwtYnVmZmFsby00NjM3LmNsZXJrLmFjY291bnRzLmRldiQ"
+    src="https://civil-buffalo-4637.clerk.accounts.dev/npm/@clerk/clerk-js@5/dist/clerk.browser.js"
+    type="text/javascript">
+  </script>
+
   <style>
     @layer base {
       html, body { margin: 0; padding: 0; height: 100%; }
@@ -182,8 +191,38 @@
           <span class="material-symbols-outlined text-[14px]">contrast</span>
           <span class="hidden md:inline">THEME</span>
         </button>
-        <div class="hidden sm:flex items-center gap-space-xs bg-surface-container-high px-space-sm py-space-2xs font-label-caps text-label-caps text-on-surface">
+        <div id="deskUserRole" class="hidden sm:flex items-center gap-space-xs bg-surface-container-high px-space-sm py-space-2xs font-label-caps text-label-caps text-on-surface">
           DESK: MACRO/CIO
+        </div>
+
+        <!-- Clerk Authentication Controls -->
+        <div id="clerk-auth-container" class="flex items-center gap-space-xs">
+          <!-- Loading State -->
+          <div id="clerk-loading" class="px-space-xs py-space-2xs bg-surface-container border border-surface-container-high text-on-surface-variant font-label-caps text-label-caps flex items-center gap-space-xs">
+            <span class="material-symbols-outlined text-[13px] animate-spin">sync</span>
+            <span class="hidden sm:inline">AUTH...</span>
+          </div>
+
+          <!-- Signed In State -->
+          <div id="clerk-signed-in" class="hidden items-center gap-space-xs">
+            <div class="hidden md:flex items-center gap-space-xs bg-surface-container-low border border-secondary/40 px-space-xs py-space-2xs font-micro-badge text-micro-badge text-secondary">
+              <span class="material-symbols-outlined text-[13px]">verified</span>
+              <span id="clerk-user-name">USER</span>
+            </div>
+            <div id="clerk-user-button"></div>
+          </div>
+
+          <!-- Signed Out State -->
+          <div id="clerk-signed-out" class="hidden items-center gap-space-xs">
+            <button id="clerkSignInBtn" class="px-space-sm py-space-2xs bg-primary text-on-primary hover:bg-primary-container font-label-caps text-label-caps font-bold transition-all shadow-sm flex items-center gap-space-xs cursor-pointer">
+              <span class="material-symbols-outlined text-[14px]">login</span>
+              <span>SIGN IN</span>
+            </button>
+            <button id="clerkSignUpBtn" class="hidden sm:flex px-space-sm py-space-2xs bg-surface-container border border-primary/50 text-primary hover:bg-primary hover:text-on-primary font-label-caps text-label-caps font-bold transition-all items-center gap-space-xs cursor-pointer">
+              <span class="material-symbols-outlined text-[14px]">person_add</span>
+              <span>SIGN UP</span>
+            </button>
+          </div>
         </div>
       </div>
 
@@ -400,12 +439,15 @@
     </div>
   </footer>
 
-  <!-- Master Application Script -->
+  <!-- Master Application Script & Clerk Auth -->
   <script type="module">
     import { TerminalMasterApp } from './js/terminalMaster.js';
+    import { ClerkAuthController } from './js/clerkAuth.js';
 
-    document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener('DOMContentLoaded', async () => {
       window.terminalApp = new TerminalMasterApp();
+      window.clerkAuth = new ClerkAuthController();
+      await window.clerkAuth.init();
     });
   </script>
 

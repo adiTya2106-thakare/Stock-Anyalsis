@@ -19,5 +19,8 @@
     "terminal"
   ],
   "author": "Executive CIO & Senior Forensic Analyst",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@clerk/clerk-js": "^6.31.0"
+  }
 }
