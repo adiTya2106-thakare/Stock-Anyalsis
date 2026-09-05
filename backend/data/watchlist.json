@@ -1,0 +1,66 @@
+{
+  "defaultWatchlist": [
+    "HDFCBANK",
+    "RELIANCE",
+    "ICICIBANK",
+    "LT",
+    "ZOMATO",
+    "SUZLON",
+    "DATAPATTNS",
+    "POLYCAB"
+  ],
+  "userWatchlists": {
+    "default": [
+      "SUZLON",
+      "HDFCBANK",
+      "RELIANCE",
+      "ICICIBANK",
+      "LT",
+      "ZOMATO",
+      "DATAPATTNS",
+      "POLYCAB"
+    ]
+  },
+  "analystNotes": {
+    "HDFCBANK": [
+      {
+        "id": "n1",
+        "author": "Desk CIO",
+        "timestamp": "2026-09-05T17:18:43.907Z",
+        "text": "Valuation at 18.2x P/E is near historical 10-year trough. CASA rebuilding post-HDFC merger remains on track."
+      }
+    ],
+    "RELIANCE": [
+      {
+        "id": "note_1788629910172",
+        "author": "Lead Quant",
+        "text": "Automated test note from CI/CD pipeline verification.",
+        "timestamp": "2026-09-05T17:38:30.172Z"
+      },
+      {
+        "id": "note_1788629776235",
+        "author": "Lead Quant",
+        "text": "Automated test note from CI/CD pipeline verification.",
+        "timestamp": "2026-09-05T17:36:16.235Z"
+      },
+      {
+        "id": "note_1788629619286",
+        "author": "Lead Quant",
+        "text": "Automated test note from CI/CD pipeline verification.",
+        "timestamp": "2026-09-05T17:33:39.286Z"
+      },
+      {
+        "id": "note_1788629575089",
+        "author": "Lead Quant",
+        "text": "Automated test note from CI/CD pipeline verification.",
+        "timestamp": "2026-09-05T17:32:55.089Z"
+      },
+      {
+        "id": "n2",
+        "author": "Senior Analyst",
+        "timestamp": "2026-09-05T17:18:43.910Z",
+        "text": "Jio & Retail value unlocking expected via 2026 IPO roadmap. Green hydrogen capex on schedule."
+      }
+    ]
+  }
+}

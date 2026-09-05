@@ -11,6 +11,7 @@ import { StockWorkstation } from './components/stockView.js';
 import { PortfolioCalculator } from './components/portfolio.js';
 import { FoRadar } from './components/foRadar.js';
 import { ForensicLab, FORENSIC_CASE_STUDIES } from './components/forensicLab.js';
+import { apiClient } from './apiClient.js';
 
 export class TerminalMasterApp {
   constructor() {
@@ -28,6 +29,7 @@ export class TerminalMasterApp {
     this.bindGlobalEvents();
     this.initSidebarSearch();
     this.initCli();
+    this.checkBackendTelemetry();
 
     // Check URL hash for initial route (e.g. #/charts?ticker=RELIANCE)
     const hash = window.location.hash.replace('#/', '');
@@ -923,6 +925,30 @@ export class TerminalMasterApp {
       this.stockWorkstation.exportStockCSV();
     } else {
       this.portfolioCalc.exportCSV();
+    }
+  }
+
+  async checkBackendTelemetry() {
+    const badge = document.getElementById('apiStatusBadge');
+    if (!badge) return;
+    try {
+      const start = Date.now();
+      const { online, data } = await apiClient.checkHealth();
+      const latency = Date.now() - start;
+      if (online) {
+        badge.innerHTML = `
+          <span class="w-space-sm h-space-sm rounded-full bg-secondary animate-live-pulse"></span>
+          <span class="font-micro-badge text-micro-badge text-secondary tracking-widest hidden sm:inline">API: LIVE (${data?.version || '2.6.0'}) ${latency}ms</span>
+        `;
+        badge.title = `Backend Connected: ${data?.runtime || 'Node.js Express'}`;
+      } else {
+        badge.innerHTML = `
+          <span class="w-space-sm h-space-sm rounded-full bg-primary-container"></span>
+          <span class="font-micro-badge text-micro-badge text-primary tracking-widest hidden sm:inline">STANDALONE MODE</span>
+        `;
+      }
+    } catch (e) {
+      console.warn('[Terminal] Health check telemetry error:', e);
     }
   }
 }

@@ -1,0 +1,243 @@
+{
+  "modelAssets": [
+    {
+      "ticker": "HDFCBANK",
+      "name": "HDFC Bank Ltd",
+      "bucket": "Large-Cap Titans",
+      "weight": 8,
+      "price": 1720,
+      "target": 2750,
+      "cagr": 12.8,
+      "divYield": 1.2
+    },
+    {
+      "ticker": "ICICIBANK",
+      "name": "ICICI Bank Ltd",
+      "bucket": "Large-Cap Titans",
+      "weight": 7,
+      "price": 1240,
+      "target": 2050,
+      "cagr": 13.5,
+      "divYield": 1
+    },
+    {
+      "ticker": "RELIANCE",
+      "name": "Reliance Industries",
+      "bucket": "Large-Cap Titans",
+      "weight": 7,
+      "price": 2950,
+      "target": 4400,
+      "cagr": 12.2,
+      "divYield": 0.8
+    },
+    {
+      "ticker": "LT",
+      "name": "Larsen & Toubro",
+      "bucket": "Large-Cap Titans",
+      "weight": 6,
+      "price": 3550,
+      "target": 5100,
+      "cagr": 11.8,
+      "divYield": 1.1
+    },
+    {
+      "ticker": "TCS",
+      "name": "Tata Consultancy Services",
+      "bucket": "Large-Cap Titans",
+      "weight": 5,
+      "price": 4100,
+      "target": 5800,
+      "cagr": 10.5,
+      "divYield": 2.8
+    },
+    {
+      "ticker": "TITAN",
+      "name": "Titan Company Ltd",
+      "bucket": "Large-Cap Titans",
+      "weight": 4,
+      "price": 3500,
+      "target": 5100,
+      "cagr": 13.2,
+      "divYield": 0.6
+    },
+    {
+      "ticker": "M&M",
+      "name": "Mahindra & Mahindra",
+      "bucket": "Large-Cap Titans",
+      "weight": 4,
+      "price": 2820,
+      "target": 4100,
+      "cagr": 12.5,
+      "divYield": 1
+    },
+    {
+      "ticker": "ITC",
+      "name": "ITC Ltd",
+      "bucket": "Large-Cap Titans",
+      "weight": 4,
+      "price": 470,
+      "target": 660,
+      "cagr": 10.8,
+      "divYield": 3.5
+    },
+    {
+      "ticker": "CUMMINSIND",
+      "name": "Cummins India",
+      "bucket": "Mid-Cap Compounders",
+      "weight": 4,
+      "price": 3520,
+      "target": 5100,
+      "cagr": 16.2,
+      "divYield": 1.2
+    },
+    {
+      "ticker": "POLYCAB",
+      "name": "Polycab India",
+      "bucket": "Mid-Cap Compounders",
+      "weight": 4,
+      "price": 6450,
+      "target": 9500,
+      "cagr": 18.5,
+      "divYield": 0.8
+    },
+    {
+      "ticker": "CDSL",
+      "name": "Central Depository Services",
+      "bucket": "Mid-Cap Compounders",
+      "weight": 4,
+      "price": 1620,
+      "target": 2500,
+      "cagr": 17.8,
+      "divYield": 1.4
+    },
+    {
+      "ticker": "MCX",
+      "name": "Multi Commodity Exchange",
+      "bucket": "Mid-Cap Compounders",
+      "weight": 3.5,
+      "price": 5500,
+      "target": 8400,
+      "cagr": 18.2,
+      "divYield": 1.1
+    },
+    {
+      "ticker": "PIIND",
+      "name": "PI Industries Ltd",
+      "bucket": "Mid-Cap Compounders",
+      "weight": 3.5,
+      "price": 4050,
+      "target": 6200,
+      "cagr": 17.5,
+      "divYield": 0.6
+    },
+    {
+      "ticker": "ZOMATO",
+      "name": "Zomato Ltd",
+      "bucket": "Mid-Cap Compounders",
+      "weight": 3,
+      "price": 260,
+      "target": 440,
+      "cagr": 21.5,
+      "divYield": 0
+    },
+    {
+      "ticker": "KEI",
+      "name": "KEI Industries Ltd",
+      "bucket": "Mid-Cap Compounders",
+      "weight": 3,
+      "price": 4150,
+      "target": 6200,
+      "cagr": 17,
+      "divYield": 0.4
+    },
+    {
+      "ticker": "AZAD",
+      "name": "Azad Engineering",
+      "bucket": "Microcaps & Asymmetric Alpha",
+      "weight": 2.5,
+      "price": 1520,
+      "target": 2800,
+      "cagr": 24.5,
+      "divYield": 0
+    },
+    {
+      "ticker": "DATAPATTNS",
+      "name": "Data Patterns India",
+      "bucket": "Microcaps & Asymmetric Alpha",
+      "weight": 2.5,
+      "price": 2780,
+      "target": 4200,
+      "cagr": 22,
+      "divYield": 0.3
+    },
+    {
+      "ticker": "HARSHAENG",
+      "name": "Harsha Engineers",
+      "bucket": "Microcaps & Asymmetric Alpha",
+      "weight": 2.5,
+      "price": 540,
+      "target": 950,
+      "cagr": 20.5,
+      "divYield": 0.5
+    },
+    {
+      "ticker": "SUZLON",
+      "name": "Suzlon Energy Ltd",
+      "bucket": "Microcaps & Asymmetric Alpha",
+      "weight": 2.5,
+      "price": 68,
+      "target": 105,
+      "cagr": 21,
+      "divYield": 0
+    },
+    {
+      "ticker": "SHIVAMET",
+      "name": "Shivalik Bimetal",
+      "bucket": "Microcaps & Asymmetric Alpha",
+      "weight": 2.5,
+      "price": 560,
+      "target": 980,
+      "cagr": 22.5,
+      "divYield": 0.6
+    },
+    {
+      "ticker": "MOLDTKPAC",
+      "name": "Mold-Tek Packaging",
+      "bucket": "Microcaps & Asymmetric Alpha",
+      "weight": 2.5,
+      "price": 760,
+      "target": 1350,
+      "cagr": 19.8,
+      "divYield": 1.2
+    },
+    {
+      "ticker": "GOLDBEES",
+      "name": "Sovereign Gold Bond / Gold ETF",
+      "bucket": "Tactical Hedge & Cash",
+      "weight": 7.5,
+      "price": 72,
+      "target": 110,
+      "cagr": 10,
+      "divYield": 2.5
+    },
+    {
+      "ticker": "LIQUIDBEES",
+      "name": "91-Day T-Bills / Liquid Arbitrage",
+      "bucket": "Tactical Hedge & Cash",
+      "weight": 7.5,
+      "price": 1000,
+      "target": 1350,
+      "cagr": 6.8,
+      "divYield": 6.8
+    }
+  ],
+  "targetCagr": "15.8% - 17.5%",
+  "projectedHorizon": "2026-2030",
+  "benchmark": "Nifty 50 TRI",
+  "assetAllocation": {
+    "Large-Cap Titans": 45,
+    "Mid-Cap Compounders": 25,
+    "Microcaps & Asymmetric Alpha": 15,
+    "Tactical Hedge & Cash": 15
+  }
+}

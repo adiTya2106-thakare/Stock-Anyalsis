@@ -4,6 +4,7 @@
 
 import { MASTER_STOCKS, getStockByTicker } from '../data/masterStocks.js';
 import { StockChartEngine } from './stockChart.js';
+import { apiClient } from '../apiClient.js';
 
 export class StockWorkstation {
   constructor(containerElement, onNavigatePhase) {
@@ -13,6 +14,7 @@ export class StockWorkstation {
     this.chartEngine = null;
     this.activeFilter = 'ALL';
     this.searchQuery = '';
+    this.analystNotes = [];
   }
 
   mount(initialTicker = null) {
@@ -21,13 +23,16 @@ export class StockWorkstation {
       if (found) this.currentStock = found;
     }
     this.render();
+    this.fetchLiveNotes();
   }
 
   selectStock(ticker) {
     const found = getStockByTicker(ticker);
     if (!found) return;
     this.currentStock = found;
+    this.analystNotes = [];
     this.render();
+    this.fetchLiveNotes();
   }
 
   selectNextStock() {
@@ -339,6 +344,9 @@ export class StockWorkstation {
               <button id="btnAddToSim" class="w-full py-space-xs bg-primary hover:bg-primary-container text-on-primary font-label-caps text-label-caps font-bold uppercase tracking-wider flex items-center justify-center gap-space-xs transition-colors">
                 <span class="material-symbols-outlined text-[15px]">add_task</span> BUY IN PORTFOLIO SIM
               </button>
+              <button id="btnToggleWatchlist" class="w-full py-space-xs bg-surface-container hover:bg-surface-bright text-on-surface-variant hover:text-on-surface border border-surface-container-high font-label-caps text-label-caps uppercase flex items-center justify-center gap-space-xs transition-colors">
+                <span class="material-symbols-outlined text-[15px] text-primary">star_border</span> WATCHLIST SYNC
+              </button>
               <button id="btnExportStockData" class="w-full py-space-xs bg-surface-container hover:bg-surface-bright text-on-surface-variant hover:text-on-surface border border-surface-container-high font-label-caps text-label-caps uppercase flex items-center justify-center gap-space-xs transition-colors">
                 <span class="material-symbols-outlined text-[15px] text-secondary">download</span> EXPORT STOCK DOSSIER
               </button>
@@ -373,6 +381,32 @@ export class StockWorkstation {
               <span>SOLVENCY HORIZON: <strong class="text-secondary">FORTRESS GRADE</strong></span>
               <span>BETA TO NIFTY: <strong class="text-primary">0.92</strong></span>
             </div>
+          </div>
+        </div>
+
+        <!-- 6. LIVE INSTITUTIONAL RESEARCH MEMOS & ANALYST LOGS -->
+        <div class="bg-surface-container-low p-space-lg border border-surface-container-high space-y-space-md">
+          <div class="flex items-center justify-between border-b border-surface-container-high/60 pb-space-xs flex-wrap gap-space-xs">
+            <div class="flex items-center gap-space-xs font-headline-md text-headline-md text-primary font-semibold uppercase">
+              <span class="material-symbols-outlined text-[18px]">edit_note</span>
+              <span>INSTITUTIONAL RESEARCH LOGS &amp; ANALYST NOTES (${s.ticker})</span>
+            </div>
+            <span class="font-micro-badge text-micro-badge bg-secondary/10 text-secondary border border-secondary/20 px-space-xs py-space-2xs uppercase">
+              LIVE BACKEND API SYNC
+            </span>
+          </div>
+
+          <!-- Note Input Field -->
+          <div class="flex flex-col sm:flex-row gap-space-xs">
+            <input id="analystNoteInput" type="text" placeholder="Add investment thesis note, management guidance update, or forensic flag for ${s.ticker}..." class="flex-1 bg-surface-container-lowest border border-surface-container-high px-space-md py-space-xs font-mono text-sm text-on-surface focus:outline-none focus:border-primary placeholder:text-on-surface-variant/50" />
+            <button id="btnSubmitAnalystNote" class="px-space-md py-space-xs bg-primary hover:bg-primary-container text-on-primary font-label-caps text-label-caps font-bold uppercase tracking-wider flex items-center justify-center gap-space-xs transition-colors shrink-0">
+              <span class="material-symbols-outlined text-[15px]">save</span> COMMIT NOTE
+            </button>
+          </div>
+
+          <!-- Notes List Container -->
+          <div id="analystNotesContainer" class="space-y-space-xs max-h-56 overflow-y-auto pr-space-xs">
+            <div class="text-[12px] text-on-surface-variant font-mono py-space-xs">Loading desk notes from backend...</div>
           </div>
         </div>
       </div>
@@ -436,6 +470,42 @@ export class StockWorkstation {
     const btnExportStock = document.getElementById('btnExportStockData');
     if (btnExportStock) {
       btnExportStock.addEventListener('click', () => this.exportStockCSV());
+    }
+
+    // Watchlist Toggle
+    const btnWatchlist = document.getElementById('btnToggleWatchlist');
+    if (btnWatchlist) {
+      btnWatchlist.addEventListener('click', async () => {
+        btnWatchlist.disabled = true;
+        const res = await apiClient.toggleWatchlist(this.currentStock.ticker);
+        if (res && res.success) {
+          btnWatchlist.innerHTML = res.action === 'added'
+            ? `<span class="material-symbols-outlined text-[15px] text-secondary">star</span> IN WATCHLIST`
+            : `<span class="material-symbols-outlined text-[15px] text-primary">star_border</span> WATCHLIST SYNC`;
+        }
+        btnWatchlist.disabled = false;
+      });
+    }
+
+    // Submit Analyst Note
+    const btnSubmitNote = document.getElementById('btnSubmitAnalystNote');
+    const noteInput = document.getElementById('analystNoteInput');
+    if (btnSubmitNote && noteInput) {
+      btnSubmitNote.addEventListener('click', async () => {
+        const text = noteInput.value.trim();
+        if (!text) return;
+        btnSubmitNote.disabled = true;
+        btnSubmitNote.innerHTML = `<span class="material-symbols-outlined text-[15px] animate-spin">sync</span> COMMIT...`;
+        const author = window.Clerk?.user?.fullName || window.Clerk?.user?.firstName || 'Desk CIO';
+        const res = await apiClient.addStockNote(this.currentStock.ticker, text, author);
+        if (res && res.success && res.note) {
+          this.analystNotes.unshift(res.note);
+          this.renderNotesList();
+          noteInput.value = '';
+        }
+        btnSubmitNote.disabled = false;
+        btnSubmitNote.innerHTML = `<span class="material-symbols-outlined text-[15px]">save</span> COMMIT NOTE`;
+      });
     }
 
     // Keyboard shortcuts for cycling stocks: [ and ]
@@ -555,5 +625,44 @@ export class StockWorkstation {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+  }
+
+  async fetchLiveNotes() {
+    try {
+      const data = await apiClient.getStock(this.currentStock.ticker);
+      if (data && data.notes) {
+        this.analystNotes = data.notes;
+        this.renderNotesList();
+      }
+    } catch (e) {
+      console.warn('[StockWorkstation] Note fetch error:', e);
+    }
+  }
+
+  renderNotesList() {
+    const container = document.getElementById('analystNotesContainer');
+    if (!container) return;
+
+    if (!this.analystNotes || this.analystNotes.length === 0) {
+      container.innerHTML = `
+        <div class="text-[11px] text-on-surface-variant font-mono py-space-xs italic">
+          No analyst notes recorded yet for ${this.currentStock.ticker}. Enter a thesis memo above to persist to backend.
+        </div>
+      `;
+      return;
+    }
+
+    container.innerHTML = this.analystNotes.map(n => {
+      const dateStr = n.timestamp ? new Date(n.timestamp).toLocaleDateString('en-IN', { hour: '2-digit', minute: '2-digit' }) : 'Recent';
+      return `
+        <div class="bg-surface-container-lowest p-space-xs border-l-2 border-primary/60 border-t border-r border-b border-surface-container-high/40 text-left space-y-space-2xs">
+          <div class="flex justify-between items-center text-[10px] text-on-surface-variant font-mono">
+            <span class="text-primary font-bold uppercase">${n.author || 'Desk Analyst'}</span>
+            <span>${dateStr}</span>
+          </div>
+          <div class="text-[11px] text-on-surface font-mono leading-relaxed">${n.text}</div>
+        </div>
+      `;
+    }).join('');
   }
 }

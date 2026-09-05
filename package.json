@@ -7,6 +7,7 @@
     "start": "node server.js",
     "dev": "node server.js",
     "serve": "node server.js",
+    "test": "node test-backend.js",
     "build": "echo Zero build step required - Static ES Modules"
   },
   "keywords": [
@@ -21,6 +22,8 @@
   "author": "Executive CIO & Senior Forensic Analyst",
   "license": "ISC",
   "dependencies": {
-    "@clerk/clerk-js": "^6.31.0"
+    "@clerk/clerk-js": "^6.31.0",
+    "cors": "^2.8.6",
+    "express": "^5.2.1"
   }
 }

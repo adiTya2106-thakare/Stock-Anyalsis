@@ -1,99 +1,44 @@
 /**
- * BHARAT ALPHA TERMINAL - LIGHTWEIGHT ZERO-DEPENDENCY HTTP SERVER
- * Uses native Node.js 'http', 'fs', and 'path' modules.
+ * BHARAT ALPHA TERMINAL - PRODUCTION & LOCAL SERVER
+ * Unifies the Express API Engine with static asset serving for the Terminal SPA.
  */
 
-const http = require('http');
-const fs = require('fs');
 const path = require('path');
+const express = require('express');
+const app = require('./backend/app');
 
 const PORT = process.env.PORT || 3000;
 const BASE_DIR = __dirname;
 
-const MIME_TYPES = {
-  '.html': 'text/html; charset=utf-8',
-  '.css': 'text/css; charset=utf-8',
-  '.js': 'application/javascript; charset=utf-8',
-  '.json': 'application/json; charset=utf-8',
-  '.png': 'image/png',
-  '.jpg': 'image/jpeg',
-  '.svg': 'image/svg+xml',
-  '.ico': 'image/x-icon',
-  '.md': 'text/markdown; charset=utf-8'
-};
+// 1. Legacy View Redirects to Modern Terminal Hash Routes
+app.get(['/view2', '/view2.html'], (req, res) => res.redirect(302, '/#/crisis'));
+app.get(['/view3', '/view3.html'], (req, res) => res.redirect(302, '/#/phase2'));
+app.get(['/view4', '/view4.html'], (req, res) => res.redirect(302, '/#/phase7'));
+app.get(['/view5', '/view5.html'], (req, res) => res.redirect(302, '/#/forensic'));
 
-const server = http.createServer((req, res) => {
-  let reqPath = decodeURI(req.url.split('?')[0]);
-
-  // Legacy view redirects to modern unified SPA
-  if (reqPath.includes('/view2')) {
-    res.writeHead(302, { 'Location': '/#/crisis' });
-    res.end();
-    return;
-  }
-  if (reqPath.includes('/view3')) {
-    res.writeHead(302, { 'Location': '/#/phase2' });
-    res.end();
-    return;
-  }
-  if (reqPath.includes('/view4')) {
-    res.writeHead(302, { 'Location': '/#/phase7' });
-    res.end();
-    return;
-  }
-  if (reqPath.includes('/view5')) {
-    res.writeHead(302, { 'Location': '/#/forensic' });
-    res.end();
-    return;
-  }
-
-  if (reqPath === '/' || reqPath === '') reqPath = '/index.html';
-
-  const safePath = path.normalize(reqPath).replace(/^(\.\.[\/\\])+/, '');
-  let filePath = path.join(BASE_DIR, safePath);
-
-  function serveFile(p) {
-    const ext = path.extname(p).toLowerCase();
-    const contentType = MIME_TYPES[ext] || 'application/octet-stream';
-
-    res.writeHead(200, {
-      'Content-Type': contentType,
-      'Cache-Control': 'no-cache, no-store, must-revalidate'
-    });
-
-    const stream = fs.createReadStream(p);
-    stream.pipe(res);
-  }
-
-  fs.stat(filePath, (err, stats) => {
-    if (!err && stats.isFile()) {
-      serveFile(filePath);
-      return;
+// 2. Serve Static Assets (index.html, js, css, markdown research dossiers)
+app.use(express.static(BASE_DIR, {
+  dotfiles: 'ignore',
+  etag: true,
+  lastModified: true,
+  setHeaders: (res, filePath) => {
+    if (filePath.endsWith('.html')) {
+      res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
     }
+  }
+}));
 
-    // Try appending .html
-    if (!path.extname(filePath)) {
-      const htmlPath = filePath + '.html';
-      fs.stat(htmlPath, (err2, stats2) => {
-        if (!err2 && stats2.isFile()) {
-          serveFile(htmlPath);
-          return;
-        }
-        res.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' });
-        res.end('404 Not Found: Bharat Alpha Terminal');
-      });
-      return;
-    }
-
-    res.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' });
-    res.end('404 Not Found: Bharat Alpha Terminal');
-  });
+// 3. Fallback for SPA routing: send index.html for unhandled web navigation
+app.use((req, res) => {
+  res.sendFile(path.join(BASE_DIR, 'index.html'));
 });
 
-server.listen(PORT, () => {
+// 4. Start HTTP Server
+app.listen(PORT, () => {
   console.log('====================================================');
-  console.log('🏛️  BHARAT ALPHA TERMINAL (2026-2030) LOCAL SERVER');
+  console.log('🏛️  BHARAT ALPHA TERMINAL (2026-2030) UNIFIED SERVER');
   console.log(`🌐 Server running at: http://localhost:${PORT}/`);
-  console.log('⚡ Serving institutional research dossier & codebase');
+  console.log(`⚡ Express API mounted at: http://localhost:${PORT}/api/`);
+  console.log(`🩺 Health check at: http://localhost:${PORT}/api/health`);
   console.log('====================================================');
 });

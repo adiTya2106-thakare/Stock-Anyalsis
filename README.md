@@ -7,16 +7,54 @@ An institutional-grade research platform, multi-decade market autopsy (1975–Pr
 
 ## 🚀 Quick Start / How to Run
 
-### Method 1: Instant Direct Launch (Zero Setup)
-Simply double-click or open **[`index.html`](file:///c:/Users/DELL/Desktop/clerk2.0/index.html)** in any modern web browser (Chrome, Edge, Firefox, Safari).  
-*No build steps, no `npm install`, zero external runtime dependencies.*
-
-### Method 2: Local HTTP Server (Node.js)
-Open your terminal in this repository and execute:
+### Method 1: Local Full-Stack Server (Express API + Web Terminal)
 ```bash
-node server.js
+# Install dependencies
+npm install
+
+# Run automated backend test suite
+npm test
+
+# Start the unified Express & Terminal Server
+npm start
+# or
+npm run dev
 ```
-Then navigate to: **`http://localhost:3000/`**
+Navigate to: **`http://localhost:3000/`**  
+The Express API is active under: **`http://localhost:3000/api/`** (Health check: `http://localhost:3000/api/health`).
+
+### Method 2: Cloud Deployment on Vercel
+The repository is pre-configured with `vercel.json` and serverless handler `api/index.js`:
+1. Push this repository to GitHub.
+2. Import the project into **Vercel** (`https://vercel.com/new`).
+3. Add Environment Variables in Vercel Settings (optional for Clerk Auth):
+   - `CLERK_PUBLISHABLE_KEY` (from `.env.example`)
+   - `CLERK_SECRET_KEY` (from `.env.example`)
+4. Click **Deploy**. Vercel will serve all static assets via global edge CDN and execute all `/api/*` endpoints as low-latency Serverless Functions.
+
+### Method 3: Instant Direct Launch (Static Preview)
+Simply double-click or open **[`index.html`](file:///c:/Users/DELL/Desktop/clerk2.0/index.html)** in any browser. The client automatically switches to standalone offline mode if the backend is not running.
+
+---
+
+## ⚡ Backend Architecture & API Surface
+
+| Endpoint | Method | Description |
+|---|---|---|
+| `/api/health` | `GET` | System heartbeat, version, and serverless runtime telemetry |
+| `/api/stocks` | `GET` | Full institutional universe with query search, sector/tier filter & sorting |
+| `/api/stocks/:ticker` | `GET` | Individual stock valuation multiples, institutional thesis & analyst notes |
+| `/api/stocks/:ticker/notes` | `POST` | Commit persistent analyst memo/note to the stock dossier |
+| `/api/portfolio` | `GET` | Retrieve Sovereign 30 Model Portfolio asset allocation |
+| `/api/portfolio/simulate` | `POST` | Dynamic capital allocation and 2030 wealth projection engine |
+| `/api/watchlist` | `GET` | Active user or desk watchlist with stock quotes |
+| `/api/watchlist` | `POST` | Toggle add/remove stock to watchlist |
+| `/api/macro` | `GET` | 50-year crisis drawdowns and macro milestone targets |
+| `/api/whales` | `GET` | Super-investor portfolios and institutional footprint trends |
+| `/api/forensic` | `GET` | Smallcap forensic fraud cases and red-flag checklist |
+| `/api/forensic/check` | `POST` | Balance-sheet governance score calculation |
+| `/api/fo-radar` | `GET` | F&O derivatives radar, PCR, and institutional rollover metrics |
+| `/api/auth/me` | `GET` | Clerk session validation and role verification |
 
 ---
 

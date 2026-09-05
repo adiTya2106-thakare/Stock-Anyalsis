@@ -1,0 +1,96 @@
+{
+  "caseStudies": [
+    {
+      "name": "Brightcom Group (Historical Debacle)",
+      "ticker": "BRIGHTCOM",
+      "promoterPledge": 0,
+      "cfoPatRatio": 22,
+      "auditorTurnover": "Multiple Resignations",
+      "contingentLiabRatio": 45,
+      "rptAdvances": "Severe (Shell companies)",
+      "verdict": "CRITICAL FRAUD FAILURE",
+      "verdictClass": "badge-danger",
+      "analysis": "Forged bank balances, preferential allotments without funds, and fake offshore acquisitions."
+    },
+    {
+      "name": "PC Jeweller (Historical Debacle)",
+      "ticker": "PCJEWELLER",
+      "promoterPledge": 38.5,
+      "cfoPatRatio": 18,
+      "auditorTurnover": "Auditor Reservations",
+      "contingentLiabRatio": 52,
+      "rptAdvances": "Massive export receivables to relatives",
+      "verdict": "CRITICAL RED FLAG",
+      "verdictClass": "badge-danger",
+      "analysis": "Unhedged gold loans, promoter relative related-party transactions, and massive bank default."
+    },
+    {
+      "name": "HDFC Bank Ltd (Institutional Anchor)",
+      "ticker": "HDFCBANK",
+      "promoterPledge": 0,
+      "cfoPatRatio": 100,
+      "auditorTurnover": "PricewaterhouseCoopers (PwC) / Big 4",
+      "contingentLiabRatio": 8.5,
+      "rptAdvances": "Zero (Strict Arms-Length)",
+      "verdict": "PRISTINE INSTITUTIONAL GRADE",
+      "verdictClass": "badge-success",
+      "analysis": "0.0% pledge, pristine underwriting, Big-4 audit, zero governance red flags."
+    },
+    {
+      "name": "Azad Engineering (Precision Niche)",
+      "ticker": "AZAD",
+      "promoterPledge": 0,
+      "cfoPatRatio": 84,
+      "auditorTurnover": "Tier-1 Statutory Auditor",
+      "contingentLiabRatio": 6.2,
+      "rptAdvances": "Operational Only",
+      "verdict": "HIGH GOVERNANCE INTEGRITY",
+      "verdictClass": "badge-success",
+      "analysis": "0.0% pledge, AS9100 aerospace certified, high CFO/PAT conversion, zero promoter diversion."
+    }
+  ],
+  "redFlagChecklist": [
+    {
+      "id": "RF1",
+      "name": "CFO to PAT Divergence",
+      "threshold": "CFO / PAT < 0.7 for 3 consecutive years",
+      "risk": "Severe (Aggressive Revenue Recognition)"
+    },
+    {
+      "id": "RF2",
+      "name": "Promoter Share Pledging",
+      "threshold": "Pledge > 20% of promoter holding",
+      "risk": "Critical Margin Call Liquidation Risk"
+    },
+    {
+      "id": "RF3",
+      "name": "Contingent Liabilities to Net Worth",
+      "threshold": "Contingent Liabilities > 30% of Net Worth",
+      "risk": "Off-Balance Sheet Litigation Shock"
+    },
+    {
+      "id": "RF4",
+      "name": "Frequent Auditor Resignations",
+      "threshold": "Auditor resignation mid-term without detailed explanation",
+      "risk": "Statutory Red Flag / Fraud Potential"
+    },
+    {
+      "id": "RF5",
+      "name": "Related Party Transactions (RPT)",
+      "threshold": "Unlisted promoter entity loans/sales > 15% revenue",
+      "risk": "Capital Siphoning"
+    },
+    {
+      "id": "RF6",
+      "name": "Beneish M-Score Threshold",
+      "threshold": "M-Score > -1.78 indicates high probability of earnings manipulation",
+      "risk": "Forensic Accounting Anomaly"
+    },
+    {
+      "id": "RF7",
+      "name": "Altman Z-Score Distress",
+      "threshold": "Z-Score < 1.8 indicates high distress / bankruptcy risk within 24 months",
+      "risk": "Solvency Default"
+    }
+  ]
+}
