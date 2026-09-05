@@ -24,6 +24,29 @@ const MIME_TYPES = {
 
 const server = http.createServer((req, res) => {
   let reqPath = decodeURI(req.url.split('?')[0]);
+
+  // Legacy view redirects to modern unified SPA
+  if (reqPath.includes('/view2')) {
+    res.writeHead(302, { 'Location': '/#/crisis' });
+    res.end();
+    return;
+  }
+  if (reqPath.includes('/view3')) {
+    res.writeHead(302, { 'Location': '/#/phase2' });
+    res.end();
+    return;
+  }
+  if (reqPath.includes('/view4')) {
+    res.writeHead(302, { 'Location': '/#/phase7' });
+    res.end();
+    return;
+  }
+  if (reqPath.includes('/view5')) {
+    res.writeHead(302, { 'Location': '/#/forensic' });
+    res.end();
+    return;
+  }
+
   if (reqPath === '/' || reqPath === '') reqPath = '/index.html';
 
   const safePath = path.normalize(reqPath).replace(/^(\.\.[\/\\])+/, '');

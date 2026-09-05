@@ -1451,3 +1451,5 @@ export function getStockByTicker(ticker) {
   const clean = ticker.trim().toUpperCase();
   return MASTER_STOCKS.find(s => s.ticker.toUpperCase() === clean) || null;
 }
+
+export const STOCKS_DATA = MASTER_STOCKS;
